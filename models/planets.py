@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Float, Boolean
+from sqlalchemy import Column, Integer, String, Float, Boolean, JSON, Text
 from core.database import Base
 
 
@@ -14,3 +14,8 @@ class Planet(Base):
     has_rings = Column(Boolean, default=False)
     number_of_moons = Column(Integer, default=0)
     description = Column(String)
+    fun_facts = Column(JSON)
+    african_context = Column(Text)
+    visible_from_nigeria = Column(Boolean)
+    naked_eye = Column(Boolean)
+    viewing_notes = Column(String)
