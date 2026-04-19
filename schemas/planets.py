@@ -13,7 +13,7 @@ class PlanetBase(BaseModel):
     description: Optional[str] = None
 
 
-class PlantCreate(PlanetBase):
+class PlanetCreate(PlanetBase):
     pass
 
 
