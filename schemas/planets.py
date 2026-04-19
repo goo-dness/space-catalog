@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Optional
 
 
@@ -19,6 +19,4 @@ class PlanetCreate(PlanetBase):
 
 class PlanetResponse(PlanetBase):
     id: int
-
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributtes=True)
