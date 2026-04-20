@@ -1,6 +1,6 @@
-from sqlalchemy import Column, Integer, String, Float, Boolean, JSON, DateTime
+from sqlalchemy import Column, Integer, String, Float, Boolean, DateTime
 from core.database import Base
-from datetime import datetime
+from datetime import datetime, timezone
 
 
 class Planet(Base):
@@ -20,8 +20,14 @@ class Planet(Base):
     description = Column(String)
     fun_facts = Column(String)
     visible_from_nigeria = Column(Boolean, default=False)
-    naked_eye = Column(Boolean, default=False)
+    naked_eye_view = Column(Boolean, default=False)
 
     # Timestamps
-    created_at = Column(DateTime, default=datetime.utcnow)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    created_at = Column(
+        DateTime(timezone=True), default=lambda: datetime.now(timezone.utc)
+    )
+    updated_at = Column(
+        DateTime(timezone=True),
+        default=lambda: datetime.now(timezone.utc),
+        onupdate=lambda: datetime.now(timezone.utc),
+    )

@@ -13,10 +13,13 @@ def seed_planets():
     try:
         for planet in planets_data:
             exists = db.query(Planet).filter(Planet.name == planet["name"]).first()
-            if not exists:
+            if exists:
+                for key, value in planet.items():
+                    setattr(exists, key, value)
+            else:
                 db.add(Planet(**planet))
         db.commit()
-        print("Planets seeded successfull.")
+        print("Planets seeded successfully.")
     finally:
         db.close()
 

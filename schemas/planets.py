@@ -3,7 +3,6 @@ from typing import Optional
 
 
 class PlanetBase(BaseModel):
-    id: int
     name: str
     mass: Optional[float] = None
     radius: Optional[float] = None
