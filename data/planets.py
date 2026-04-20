@@ -1,5 +1,6 @@
 planets_data = [
     {
+        "id": 1,
         "name": "Mercury",
         "mass": 0.330,
         "radius": 2439.7,
@@ -7,9 +8,15 @@ planets_data = [
         "orbital_period": 88.0,
         "has_rings": False,
         "number_of_moons": 0,
-        "description": "Smallest planet and closest to the sun",
+        "surface_gravity": 3.7,  # m/s
+        "temperature": 167,  # degrees celsius
+        "description": "Mercury is the innermost and smallest planet of the Solar System. Because it has almost no atmosphere to retain heat, Mercury`s surface experience the greatest temperature variations of the planets. Mercury appears as morning or evening star from Earth, but due to it`s proximity to the sun, it is very hard to see. Still Mercury can be observed at least twice a year: in spring at dusk and in autumn before dawn",
+        "fun_facts": "Smallest planet and closest to the sun.",
+        "visible_from_nigeria": True,
+        "naked_eye": False,
     },
     {
+        "id": 2,
         "name": "Venus",
         "mass": 4.87,
         "radius": 6051.8,
@@ -17,9 +24,15 @@ planets_data = [
         "orbital_period": 224.7,
         "has_rings": False,
         "number_of_moons": 0,
-        "description": "Hottest planet due to green house effect",
+        "surface_gravity": 8.9,
+        "temperature": 462,  # degrees celsius
+        "description": "Although Venus has very similar size and interior structure as Earth, its volcanic surface and extremely hot and dense atmosphere makes it one of the most inhospitable places in the Solar System.Venus is one of the brihtest objects in our night sky- second only to the moon. It appears as either an evening or morning star.",
+        "fun_facts": "Hottest planet due to greenhouse effect.",
+        "visible_from_nigeria": True,
+        "naked_eye": True,
     },
     {
+        "id": 3,
         "name": "Earth",
         "mass": 5.97,
         "radius": 6371.0,
@@ -27,9 +40,15 @@ planets_data = [
         "orbital_period": 365.2,
         "has_rings": False,
         "number_of_moons": 1,
-        "description": "Only planet known to harbour life",
+        "surface_gravity": "9.8",
+        "temperature": "15",  # degrees celsius
+        "description": "Our homeworld is the densest of the eight planets in our Solar System. It is also the largest of the terrestial planets.",
+        "fun_facts": "Only planet known to harbour life.",
+        "visible_from_nigeria": True,
+        "naked_eye": True,
     },
     {
+        "id": 4,
         "name": "Mars",
         "mass": 0.642,
         "radius": 3389.5,
@@ -37,9 +56,15 @@ planets_data = [
         "orbital_period": 687.0,
         "has_rings": False,
         "number_of_moons": 2,
-        "description": "The Red planet. Target for human colonisation",
+        "surface_gravity": 3.7,
+        "temperarue": -63,  # degrees celsius
+        "description": "Mars has a dramatic landscape, with towering volcanoes and polar caps, the days on Mars are only 40 minutes longer, the axial tilt gives it similar seasons to ours(although each lasts about twice s long)",
+        "fun_facts": "The Red planet. Target for human colonisation",
+        "visible_from_nigeria": True,
+        "naked_eye": True,
     },
     {
+        "id": 5,
         "name": "Jupiter",
         "mass": 1898.0,
         "radius": 69911.0,
@@ -47,9 +72,15 @@ planets_data = [
         "orbital_period": 4331.0,
         "has_rings": False,
         "number_of_moons": 95,
-        "description": "Largest planet. The Great Red Spot is a storm older than 350 years.",
+        "surface_gravity": 25,
+        "temperature": -120,  # degrees celsius
+        "description": "Jupiter is the largest planet of the Solar System with a mass of  2.5 greater than all the of the rests of the planets combined- but still only one-thousandth that of the sun. Jupiter is the planet most like the sun in terms of its composition. Although Jupiter would still need to be about 75 times as massive to fuse hydrogen and become a star, it would only need to be 13 times as massive to burn deuterium and become a dwarf.",
+        "fun_facts": "Largest planet. The Great Red Spot is a storm older than 350 years.",
+        "visible_from_nigeria": True,
+        "naked_eye": True,
     },
     {
+        "id": 6,
         "name": "Saturn",
         "mass": 568.0,
         "radius": 58232.0,
@@ -57,9 +88,15 @@ planets_data = [
         "orbital_period": 10747.0,
         "has_rings": True,
         "number_of_moons": 146,
-        "description": "Most spetacular ring system in the solar system.",
+        "surface_gravity": 10.4,
+        "temperature": -139,  # degrees celsius
+        "description": "Although, the seond largest, Saturn is the least dense of all the planets in the Solar System, with only one-eight the density of Earth(but nine times its diameter). It is also the only planet that is less than water. While the other gas giants also have rings systems, Saturn`s is larger and more visible than any other in the solar system. The rings are composed of water ice crystals and a smaller amount of rock, ranging in size from a speck of dust to a few particles as large as mountains.",
+        "fun_facts": "Most spetacular ring system in the solar system.",
+        "visible_from_nigeria": True,
+        "naked_eye": True,
     },
     {
+        "id": 7,
         "name": "Uranus",
         "mass": 86.8,
         "radius": 25362.0,
@@ -67,9 +104,15 @@ planets_data = [
         "orbital_period": 30589.0,
         "has_rings": True,
         "number_of_moons": 28,
-        "description": "Rotates on its sidewith an axial tilt of 98 degrees.",
+        "surface_gravity": 8.7,
+        "temperature": -210,  # degrees celsius
+        "description": "Uranus was the first to be discovered by the use of the modern telescope, with its discovery credited to the English astronomer William Herschel in 1781. Uranus has an axial tilt of 97.77 degrees, meaning it effectively rolls around the sun 'on its sides' compared to the other planets in the solar system.",
+        "fun_facts": "Rotates on its sidewith an axial tilt of 98 degrees.",
+        "visible_from_nigeria": True,
+        "naked_eye": False,
     },
     {
+        "id": 8,
         "name": "Neptune",
         "mass": 102.0,
         "radius": 24622.0,
@@ -77,6 +120,11 @@ planets_data = [
         "orbital_period": 59800.0,
         "has_rings": True,
         "number_of_moons": 16,
-        "description": "Strongest winds in the solar system, up to 2100 km/h.",
+        "surface_gravity": 11.2,
+        "temperature": -200,  # degrees celsius
+        "description": "Neptune was the first planet to be discovred purely on the basis of mathematical prediction rather than by direct discovery in 1846. Neptune has completed only one orbit of the sun since then.",
+        "fun_facts": "Strongest winds in the solar system, up to 2100 km/h.",
+        "visible_from_nigeria": False,
+        "naked_eye": False,
     },
 ]
