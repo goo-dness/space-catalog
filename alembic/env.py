@@ -10,6 +10,7 @@ from sqlalchemy import pool
 from alembic import context
 from models.planets import Planet
 from core.database import Base
+from models.stars import Star
 from dotenv import load_dotenv
 
 load_dotenv()
