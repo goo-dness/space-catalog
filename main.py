@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from routes.planets import router as planet_router
 from routes.stars import router as star_router
+from routes.agencies import router as agency_router
 from core.database import engine, Base
 
 Base.metadata.create_all(bind=engine)
@@ -13,6 +14,7 @@ app = FastAPI(
 
 app.include_router(planet_router, prefix="/api/v1", tags=["planets"])
 app.include_router(star_router, prefix="/api/v1", tags=["stars"])
+app.include_router(agency_router, prefix="/api/v1", tags=["agencies"])
 
 
 @app.get("/")

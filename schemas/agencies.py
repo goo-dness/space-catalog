@@ -4,10 +4,15 @@ from typing import Optional
 
 class AgencyBase(BaseModel):
     name: str
+    abbreviation: Optional[str] = None
     country: Optional[str] = None
     year_found: Optional[int] = None
-    is_active: Optional[bool] = None
-    story: Optional[str] = None
+    active: Optional[bool] = None
+    description: Optional[str] = None
+    headquarters: Optional[str] = None
+    missions_count: Optional[int] = None
+    website: Optional[str] = None
+    african_relevance: Optional[str] = None
 
 
 class AgencyCreate(AgencyBase):

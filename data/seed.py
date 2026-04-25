@@ -8,6 +8,8 @@ from models.planets import Planet
 from data.planets import planets_data
 from data.stars import stars_data
 from models.stars import Star
+from data.agencies import agencies_data
+from models.agencies import Agency
 
 
 def seed_planets():
@@ -42,6 +44,25 @@ def seed_stars():
         db.close()
 
 
+def seed_agencies():
+    db = SessionLocal()
+    try:
+        for agency in agencies_data:
+            exists = db.query(Agency).filter(Agency.name == agency["name"]).first()
+            if exists:
+                for key, value in agency.items():
+                    setattr(exists, key, value)
+            else:
+                db.add(Agency(**agency))
+        db.commit()
+        print("Agencies seeded successfully.")
+    except Exception as e:
+        print(f"Error seeding agencies: {e}")
+    finally:
+        db.close()
+
+
 if __name__ == "__main__":
     seed_planets()
     seed_stars()
+    seed_agencies()
