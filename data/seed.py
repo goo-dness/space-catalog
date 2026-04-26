@@ -10,6 +10,8 @@ from data.stars import stars_data
 from models.stars import Star
 from data.agencies import agencies_data
 from models.agencies import Agency
+from data.messier_objects import messier_data
+from models.messier_objects import MessierObjects
 
 
 def seed_planets():
@@ -62,7 +64,22 @@ def seed_agencies():
         db.close()
 
 
+def seed_messier_objects():
+    db = SessionLocal()
+    try:
+        for obj_data in messier_data:
+            obj = MessierObjects(**obj_data)
+            db.add(obj)
+        db.commit()
+        print("Messier objects seeded successfully.")
+    except Exception as e:
+        print(f"Error seeding messier objects: {e}")
+    finally:
+        db.close()
+
+
 if __name__ == "__main__":
     seed_planets()
     seed_stars()
     seed_agencies()
+    seed_messier_objects()

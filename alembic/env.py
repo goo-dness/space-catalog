@@ -12,6 +12,7 @@ from models.planets import Planet
 from core.database import Base
 from models.stars import Star
 from models.agencies import Agency
+from models.messier_objects import MessierObjects
 from dotenv import load_dotenv
 
 load_dotenv()

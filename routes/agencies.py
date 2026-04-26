@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from core.database import SessionLocal
 from models.agencies import Agency
-from schemas.agencies import AgencyResponse, AgencyCreate, AgencyBase
+from schemas.agencies import AgencyResponse, AgencyCreate
 from typing import List
 
 router = APIRouter()
