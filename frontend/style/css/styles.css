@@ -84,11 +84,10 @@ a {
     justify-content: center;
     text-align: center;
     padding: 4rem 2rem;
-    background: radial
-        gradient(
-            ellipse at center,
-            rgba(108, 99, 255, 0.15) 0% rgba(10, 10, 15, 0) 70%
-        );
+    background: radial-gradient(
+        ellipse at center,
+        rgba(108, 99, 255, 0.15) 0% rgba(10, 10, 15, 0) 70%
+    );
     position: relative;
     overflow: hidden;
 }
@@ -97,8 +96,10 @@ a {
     position: absolute;
     width: 300px;
     height: 300px;
-    background: radial
-        gradient(circle, rgba(108, 99, 255, 0.1) 0% transparent 70%);
+    background: radial-gradient(
+        circle,
+        rgba(108, 99, 255, 0.1) 0% transparent 70%
+    );
     bottom: 20%;
     right: 10%;
     border-radius: 50%;
@@ -159,7 +160,7 @@ a {
 
 .btn-secondary {
     border: 1px solid var(--accent-purple);
-    color: var(--acent-purple);
+    color: var(--accent-purple);
     padding: 0.85rem 2rem;
     border-radius: 4px;
     font-weight: 600;
@@ -170,7 +171,7 @@ a {
 }
 
 .btn-secondary:hover {
-    box-shadow: var(--accent-purple);
+    box-shadow: var(--glow-purple);
     transform: translateY(-2px);
 }
 
@@ -193,7 +194,7 @@ a {
     text-align: center;
     padding: 2rem 3rem;
     background-color: var(--bg-card);
-    border: 1px solid var(--bg-color);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     min-width: 150px;
     transition:
@@ -213,7 +214,7 @@ a {
 }
 
 .stat-card p {
-    color: var(--txt-secondary);
+    color: var(--text-secondary);
     font-size: 0.9rem;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -242,10 +243,10 @@ a {
     width: 60px;
     height: 2px;
     background-color: var(--accent-gold);
-    margin: 0.75rem auto o;
+    margin: 0.75rem auto 0;
 }
 
-.card-grids {
+.cards-grids {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
@@ -319,19 +320,123 @@ a {
 /* ===========================
         SCROLLBAR
         ========================== */
-::webkit-scrollbar {
+::-webkit-scrollbar {
     width: 6px;
 }
 
-::webkit-scrollbar-track {
-    background: var(--bg-prmary);
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
 }
 
-::webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background: var(--border-color);
     border-radius: 3px;
 }
 
-::webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background: var(--accent-purple);
+}
+
+/* ===========================
+   APOD SECTION
+   ========================== */
+.apod {
+    padding: 5rem 4rem;
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.apod h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+}
+
+.apod h2:after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    background-color: var(--accent-gold);
+    margin: 0.75rem auto 0;
+}
+.apod-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: 3rem;
+}
+
+.apod-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.apod-image-wrapper {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--glow-purple);
+}
+.apod-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.apod-video-wrapper {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.apod-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.apod-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.apod-title {
+    font-size: 1.5rem;
+    color: var(--accent-gold);
+    line-height: 1.4;
+}
+
+.apod-date {
+    font-size: 0.85rem;
+    color: var(--accent-purple);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.apod-explanation {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.apod-loading {
+    text-align: center;
+    color: var(--text-secondary);
+    padding: 3rem;
+    grid-column: 1 / -1;
 }
