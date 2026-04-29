@@ -440,3 +440,139 @@ a {
     padding: 3rem;
     grid-column: 1 / -1;
 }
+/* ===========================
+   PAGE HERO
+   =========================== */
+
+.page-hero {
+    padding: 4rem;
+    text-align: center;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(108, 99, 255, 0.1) 0%,
+        rgba(10, 10, 15, 0) 70%
+    );
+    border-bottom: 1px solid var(--border-color);
+}
+
+.page-hero h2 {
+    font-size: 3rem;
+    color: var(--accent-gold);
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+}
+
+.page-hero p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* ===========================
+   CATALOG GRID
+   =========================== */
+
+.catalog {
+    padding: 4rem;
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.catalog-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    transition:
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.catalog-card:hover {
+    box-shadow: var(--glow-purple);
+    transform: translateY(-4px);
+}
+
+.catalog-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.catalog-card-header h3 {
+    font-size: 1.3rem;
+    color: var(--accent-gold);
+}
+
+.catalog-badge {
+    font-size: 0.75rem;
+    color: var(--accent-purple);
+    border: 1px solid var(--accent-purple);
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
+.catalog-description {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.catalog-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: var(--bg-secondary);
+    border-radius: 6px;
+}
+
+.detail {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+}
+
+.detail-label {
+    color: var(--text-secondary);
+}
+
+.detail-value {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.african-context {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+}
+
+.african-context h4 {
+    color: var(--accent-gold);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.african-context p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.loading {
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 3rem;
+}
