@@ -19,7 +19,8 @@ async def get_apod():
             )
         if response.status_code != 200:
             raise HTTPException(
-                status_code=response.status_code, detail="API KEY error"
+                status_code=response.status_code,
+                detail=f"NASA API error: {response.text}",
             )
         return response.json()
 

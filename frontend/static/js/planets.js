@@ -8,6 +8,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   planets.forEach((planet) => {
     const card = document.createElement("div");
     card.className = "catalog-card";
+
+    //Make the card clickable- planet.id goes into the URL as a query parameter
+    card.style.cursor = "pointer";
+    card.addEventListener("click", () => {
+      window.location.href = `planet-detail.html?id=${planet.id}`;
+    });
     card.innerHTML = `
             <div class="catalog-card-header">
                 <h3>${planet.name}</h3>
