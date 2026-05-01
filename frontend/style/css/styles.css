@@ -86,7 +86,8 @@ a {
     padding: 4rem 2rem;
     background: radial-gradient(
         ellipse at center,
-        rgba(108, 99, 255, 0.15) 0% rgba(10, 10, 15, 0) 70%
+        rgba(108, 99, 255, 0.15) 0%,
+        rgba(10, 10, 15, 0) 70%
     );
     position: relative;
     overflow: hidden;
@@ -97,8 +98,9 @@ a {
     width: 300px;
     height: 300px;
     background: radial-gradient(
-        circle,
-        rgba(108, 99, 255, 0.1) 0% transparent 70%
+        ellipse at circle,
+        rgba(108, 99, 255, 0.1) 0%,
+        transparent 70%
     );
     bottom: 20%;
     right: 10%;

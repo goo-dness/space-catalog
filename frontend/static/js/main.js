@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoadd", async () => {
+document.addEventListener("DOMContentLoaded", async () => {
   //Load content
   const stars = await fetchStars();
   const planets = await fetchPlanets();
@@ -32,11 +32,12 @@ document.addEventListener("DOMContentLoadd", async () => {
               allowfullscreen
               class="apod-video">
           </iframe>
-        </div>
+      </div>
         <div class="apod-info">
               <h3 class="apod-title">${apod.title}</h3>
               <p class="apod-date">${apod.date}</p>
               <p class="apod-explanation">${apod.explanation}</p>
+        </div>
               `;
   }
 
@@ -53,8 +54,11 @@ document.addEventListener("DOMContentLoadd", async () => {
     card.innerHTML = `
       <h3>${star.name}</h3>
     <p class="card-type">Star &bull; ${star.constellation}</p>
-    <p>${star.description}</p>
-    <a href="pages/stars.html" class="card-link">Learn more</a>`;
+    <p>${star.cultural_significance}</p>
+    <a href="stars.html" class="card-link">Learn more</a>`;
     featuredCards.appendChild(card);
   });
+  console.log("stars:", stars);
+  console.log("planets:", planets);
+  console.log("apod:", apod);
 });

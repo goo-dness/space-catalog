@@ -13,7 +13,8 @@ document.addEventListener("DOMContentLoaded", async () => {
           <h3>${star.name}</h3>
           <span class="catalog-badge">${star.constellation}</span>
       </div>
-      <pclass="catalog-description">${star.description}</p>
+      <p class="catalog-description">${star.description}</p>
+      <p class="catalog-fun_facts">${star.fun_facts}</p>
      <div class="catalog-details">
           <div class="detail">
               <span class="detail-label">Distance</span>
@@ -21,12 +22,15 @@ document.addEventListener("DOMContentLoaded", async () => {
           </div>
           <div class="detail">
               <span class="detail-label">Magnitude</span>
-              <span class="detail-value>${star.magnitude}</span>
+              <span class="detail-value">${star.magnitude}</span>
           </div>
           <div class="detail">
               <span class="detail-label">Type</span>
               <span class="detail-value">${star.star_type}</span>
           </div>
+          <div class="detail">
+              <span class="detail-label">Designation</span>
+              <span class="detail-value">${star.designation}</span>
       </div>
       <div class="african-context">
             <h4>African Context</h4>

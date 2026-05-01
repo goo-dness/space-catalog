@@ -1,11 +1,7 @@
 const API_BASE = "http://127.0.0.1:8000/api/v1";
 
-const NASA_API_KEY = "RbFIg15EjHrZanSHKpO76KNOg73tARGmXRyf27uH";
-
 async function fetchAPOD() {
-  const response = await fetch(
-    "https://api.nasa.gov/planetery/apod?api_key=${NASA_API_KEY}",
-  );
+  const response = await fetch(`${API_BASE}/apod`);
   return await response.json();
 }
 async function fetchStars() {

@@ -1,83 +1,89 @@
- <!DCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width initia-scale=1.0" />
+        <meta name="viewport" content="width=device-width initial-scale=1.0" />
         <title>Space Catalog</title>
-        <link rel="stylesheet" href="style/css/styles.css"
+        <link rel="stylesheet" href="style/css/styles.css" />
     </head>
     <body>
-      <!--Navigation-->
-     <nav class="navbar">
-         <div class="nav-brand">
-             <h1>Space Catalog</h1>
-             <span>EXPLORE. LEARN. INSPIRE</span>
-         </div>
-         <ul class="nav-links">
-             <li><a href="index.html">Home</a></li>
-             <li><a href="stars.html">Stars</a></li>
-             <li><a href="planets.html">Planets</a></li>
-             <li><a href="agencies.html">Agencies</a></li>
-             <li><a href="messier_objects.html">Messier Objects</a></li>
-         </ul>
-     </nav>
-     <!--Hero section -->
-     <section class="hero">
-         <div class="hero-content">
-             <h2>Explore the Universe</h2>
-             <h3>Through African Eyes</h3>
-             <p>A knowledge engine documenting space throuh the lens of African astronomical heritage- from ancient Egyptian star maps to Dogon cosmology and beyond.</p>
-             <div class="hero-buttons">
-                 <a href="stars.html" class="btn-primary">Explore Stars</a>
-                 <a href="planets.html" class="btn-secondary">View planets</a>
-             </div>
-         </div>
-     </section>
+        <!--Navigation-->
+        <nav class="navbar">
+            <div class="nav-brand">
+                <h1>Space Catalog</h1>
+                <span>EXPLORE. LEARN. INSPIRE</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="stars.html">Stars</a></li>
+                <li><a href="planets.html">Planets</a></li>
+                <li><a href="agencies.html">Agencies</a></li>
+                <li><a href="messier_objects.html">Messier Objects</a></li>
+            </ul>
+        </nav>
+        <!--Hero section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Explore the Universe</h2>
+                <h3>Through African Eyes</h3>
+                <p>
+                    A knowledge engine documenting space throuh the lens of
+                    African astronomical heritage- from ancient Egyptian star
+                    maps to Dogon cosmology and beyond.
+                </p>
+                <div class="hero-buttons">
+                    <a href="stars.html" class="btn-primary">Explore Stars</a>
+                    <a href="planets.html" class="btn-secondary"
+                        >View planets</a
+                    >
+                </div>
+            </div>
+        </section>
 
-     <!--APOD section -->
-     <section class="apod">
-         <h2>Astronomy Picture Of The Day</h2>
-         <p class="apod-subtitle">Brought to you by NASA</p>
-         <div class="apod-container" id="apod-container">
-             <div class="apod-loading" id="apod-loading">
-                 <p>Loading today`s picture...</p>
-             </div>
-         </div>
-     </section>
+        <!--APOD section -->
+        <section class="apod">
+            <h2>Astronomy Picture Of The Day</h2>
+            <p class="apod-subtitle">Brought to you by NASA</p>
+            <div class="apod-container" id="apod-container">
+                <div class="apod-loading" id="apod-loading">
+                    <p>Loading today`s picture...</p>
+                </div>
+            </div>
+        </section>
 
-     <!--Stars section -->
-     <section class="stats">
-        <div class="stat-card">
-            <h3 id="star-count">0</h3>
-            <p>Stars</p>
-        </div>
-        <div class="stat-card">
-            <h3 id="planet-count">0</h3>
-            <p>Planets</p>
-        </div>
-        <div class="stat-card">
-            <h3 id="agency-count">0</h3>
-            <p>Agencies</p>
-        </div>
-        <div class="stat-card">
-            <h3 id="messier-count">0</h3>
-            <p>Messier Objects</p>
-        </div>
-     </section>
+        <!--Stars section -->
+        <section class="stats">
+            <div class="stat-card">
+                <h3 id="star-count">0</h3>
+                <p>Stars</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="planet-count">0</h3>
+                <p>Planets</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="agency-count">0</h3>
+                <p>Agencies</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="messier-count">0</h3>
+                <p>Messier Objects</p>
+            </div>
+        </section>
 
-     <!--Featured section -->
-     <section class="featured">
-         <h2>Featured Objects</h2>
-         <div class="cards-grid" id="featured-cards"></div>
-     </section>
+        <!--Featured section -->
+        <section class="featured">
+            <h2>Featured Objects</h2>
+            <div class="cards-grid" id="featured-cards"></div>
+        </section>
 
-     <!--Footer -->
-     <footer class="footer">
-         <p>Space Catalog &mdash; Part of the Sankofa Engine Platform</p>
-         <p>Built by Goodness &bull; Nigeria</p>
-     </footer>
+        <!--Footer -->
+        <footer class="footer">
+            <p>Space Catalog &mdash; Part of the Sankofa Engine Platform</p>
+            <p>Built by Goodness &bull; Nigeria</p>
+        </footer>
 
-     <script src="static/js/api.js"></script>
-     <script src="static/js/main.js"></script>
+        <script src="static/js/api.js"></script>
+        <script src="static/js/main.js"></script>
     </body>
 </html>

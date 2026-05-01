@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             <div class="catalog-details">
                 <div class="detail">
                     <span class="detail-label">Distance from Sun</span>
-                    <span class="detail-value">${planet.distance_from_sun_km} km</span>
+                    <span class="detail-value">${planet.distance_from_sun} km</span>
                 </div>
                 <div class="detail">
                     <span class="detail-label">Moons</span>
@@ -25,12 +25,8 @@ document.addEventListener("DOMContentLoaded", async () => {
                 </div>
                 <div class="detail">
                     <span class="detail-label">Orbital Period</span>
-                    <span class="detail-value">${planet.orbital_period_days} days</span>
+                    <span class="detail-value">${planet.orbital_period} days</span>
                 </div>
-            </div>
-            <div class="african-context">
-                <h4>African Context</h4>
-                <p>${planet.african_context || "Research ongoing"}</p>
             </div>
         `;
     grid.appendChild(card);
