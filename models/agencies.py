@@ -1,5 +1,7 @@
-from sqlalchemy import Column, String, Integer, DateTime, Boolean
 from datetime import datetime, timezone
+
+from sqlalchemy import Boolean, Column, DateTime, Integer, String
+
 from core.database import Base
 
 
@@ -12,6 +14,7 @@ class Agency(Base):
     country = Column(String)
     year_found = Column(Integer)
     active = Column(Boolean, default=True)
+    image_url = Column(String)
     description = Column(String)
     headquarters = Column(String)
     missions_count = Column(Integer)

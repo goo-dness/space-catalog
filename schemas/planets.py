@@ -1,5 +1,6 @@
-from pydantic import BaseModel, ConfigDict
 from typing import Optional
+
+from pydantic import BaseModel, ConfigDict
 
 
 class PlanetBase(BaseModel):
@@ -12,6 +13,7 @@ class PlanetBase(BaseModel):
     number_of_moons: int = 0
     surface_gravity: Optional[float] = None
     temperature: Optional[float] = None
+    image_url: Optional[str] = None
     description: Optional[str] = None
     fun_facts: Optional[str] = None
     visible_from_nigeria: Optional[bool] = None

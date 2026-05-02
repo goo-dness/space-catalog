@@ -1,6 +1,8 @@
-from sqlalchemy import Column, Integer, String, Float, Text, DateTime
-from sqlalchemy.dialects.postgresql import JSONB, ARRAY
 from datetime import datetime, timezone
+
+from sqlalchemy import Column, DateTime, Float, Integer, String, Text
+from sqlalchemy.dialects.postgresql import JSONB
+
 from core.database import Base
 
 
@@ -18,11 +20,12 @@ class Star(Base):
     star_type = Column(String)
     magnitude = Column(Float)
     right_ascension = Column(String)
+    image_url = Column(String)
 
     # african context - first class names
-    african_names = Column(JSONB[ARRAY])
+    african_names = Column(JSONB)
     cultural_significance = Column(Text)
-    traditional_uses = Column(JSONB[ARRAY])
+    traditional_uses = Column(JSONB)
     seasonal_associations = Column(Text)
     mythological_context = Column(Text)
 

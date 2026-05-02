@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <span class="catalog-badge">${planet.planet_type || "Planet"}</span>
             </div>
             <p class="catalog-description">${planet.description}</p>
+            <img src="${planet.image_url}" alt="${planet.name}" class="card-image"/>
             <div class="catalog-details">
                 <div class="detail">
                     <span class="detail-label">Distance from Sun</span>

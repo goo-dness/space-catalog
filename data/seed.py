@@ -1,17 +1,17 @@
-import sys
 import os
+import sys
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from core.database import SessionLocal
-from models.planets import Planet
+from data.agencies import agencies_data
+from data.messier_objects import messier_data
 from data.planets import planets_data
 from data.stars import stars_data
-from models.stars import Star
-from data.agencies import agencies_data
 from models.agencies import Agency
-from data.messier_objects import messier_data
 from models.messier_objects import MessierObjects
+from models.planets import Planet
+from models.stars import Star
 
 
 def seed_planets():
@@ -68,8 +68,16 @@ def seed_messier_objects():
     db = SessionLocal()
     try:
         for obj_data in messier_data:
-            obj = MessierObjects(**obj_data)
-            db.add(obj)
+            exists = (
+                db.query(MessierObjects)
+                .filter(MessierObjects.name == obj_data["name"])
+                .first()
+            )
+            if exists:
+                for key, value in obj_data.items():
+                    setattr(exists, key, value)
+            else:
+                db.add(MessierObjects(**obj_data))
         db.commit()
         print("Messier objects seeded successfully.")
     except Exception as e:

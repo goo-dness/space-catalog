@@ -1,6 +1,7 @@
-from pydantic import BaseModel
-from typing import Optional, List
 from datetime import datetime
+from typing import List, Optional
+
+from pydantic import BaseModel
 
 
 # Base schema — shared fields
@@ -9,9 +10,12 @@ class StarBase(BaseModel):
     designation: Optional[str] = None
     constellation: Optional[str] = None
     distance_light_years: Optional[float] = None
+    description: Optional[str] = None
+    fun_facts: Optional[str] = None
     magnitude: Optional[float] = None
     star_type: Optional[str] = None
     right_ascension: Optional[str] = None
+    image_url: Optional[str] = None
 
     # African context
     african_names: Optional[dict] = None
@@ -33,6 +37,8 @@ class StarUpdate(BaseModel):
     constellation: Optional[str] = None
     distance_light_years: Optional[float] = None
     magnitude: Optional[float] = None
+    description: Optional[str] = None
+    fun_facts: Optional[str] = None
     star_type: Optional[str] = None
     african_names: Optional[dict] = None
     cultural_significance: Optional[str] = None

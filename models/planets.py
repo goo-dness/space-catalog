@@ -1,6 +1,8 @@
-from sqlalchemy import Column, Integer, String, Float, Boolean, DateTime
-from core.database import Base
 from datetime import datetime, timezone
+
+from sqlalchemy import Boolean, Column, DateTime, Float, Integer, String
+
+from core.database import Base
 
 
 class Planet(Base):
@@ -19,6 +21,7 @@ class Planet(Base):
     # description
     description = Column(String)
     fun_facts = Column(String)
+    image_url = Column(String)
     visible_from_nigeria = Column(Boolean, default=False)
     naked_eye_view = Column(Boolean, default=False)
 

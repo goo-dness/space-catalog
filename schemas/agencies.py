@@ -1,5 +1,6 @@
-from pydantic import BaseModel, ConfigDict
 from typing import Optional
+
+from pydantic import BaseModel, ConfigDict
 
 
 class AgencyBase(BaseModel):
@@ -9,6 +10,7 @@ class AgencyBase(BaseModel):
     year_found: Optional[int] = None
     active: Optional[bool] = None
     description: Optional[str] = None
+    image_url: Optional[str] = None
     headquarters: Optional[str] = None
     missions_count: Optional[int] = None
     website: Optional[str] = None

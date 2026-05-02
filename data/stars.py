@@ -20,6 +20,7 @@ stars_data = [
             "ceremony": "Dogon Sigi festival cycle tied to Sirius orbital period.",
             "calendar": None,
         },
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/95/Sirius_A_and_B_Hubble_photo.jpg",
         "seasonal_associations": "Heliacal rising mark summer solstice in North Africa and planting seasons across multiple regions.",
         "mythological_context": "Dogon oral tradition describe Sirius B - a white dwa companion- centuries before western astronomy confirmed it in 1970. In Egyptian mythology, Sirius was Sopdet, goddess of fertility and the Nile flood.",
     },
@@ -36,6 +37,7 @@ stars_data = [
         "african_names": {
             "ancient_egyptians": "Kahi Nub",
         },
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Canopus.jpg",
         "cultural_significance": "Ancient Egyptians called it the golden earth star. Visible across the entire African continent making it a pan-African navigation reference.",
         "traditional_uses": {
             "navigation": "Primary southern navigation for North and East African traders.",
@@ -64,6 +66,7 @@ stars_data = [
             "amharic": None,
             "eastern_africa": None,
         },
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6z/Arcturus.jpg",
         "cultural_significance": "Used by East African pastoralist communities as a seasonal marker for cattle migration timing. Zulu astronomical tradition identified it distinctly.",
         "traditional_uses": {
             "navigation": "Directional reference for East African pastoralists",
@@ -94,6 +97,7 @@ stars_data = [
             "eastern_africa": None,
             "south_africa": None,
         },
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Achernar.jpg",
         "cultural_significance": "Recognized by various African cultures for its distinctive appearance and position in the sky.",
         "traditional_uses": {
             "navigation": "Used by southern African cultures for navigation due to its brightness and position near the south celestial pole.",
@@ -125,6 +129,7 @@ stars_data = [
             "eastern_africa": None,
             "south_africa": None,
         },
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Betelgeuse_star_%28Hubble%29.jpg",
         "cultural_significance": "While not specifically documented in African cultures, Betelgeuse's prominence in the night sky likely made it a significant celestial object across various African societies.",
         "traditional_uses": {
             "navigation": "Used as a reference point in the night sky for navigation across Africa.",
@@ -156,6 +161,7 @@ stars_data = [
             "eastern_africa": None,
             "south_africa": None,
         },
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Procyon_A_and_B.jpg",
         "cultural_significance": "Ancient Egyptians tracked as an advanced warning system-Procyon rises before Sirius, giving early notice that the Nile flood season was approaching.",
         "traditional_uses": {
             "navigation": None,
@@ -187,6 +193,7 @@ stars_data = [
             "eastern_africa": None,
             "south_africa": None,
         },
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/Vega_and_debris_disk.jpg",
         "cultural_significance": "While not specifically documented in African cultures, Vega's prominence in the night sky likely made it a significant celestial object across various African societies.",
         "traditional_uses": {
             "navigation": "Used as a reference point in the night sky for navigation across Africa.",
@@ -210,6 +217,7 @@ stars_data = [
         "african_names": {
             "zulu": "Mzwandile",
         },
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Alphacentauri_color.jpg",
         "cultural_significance": "Highly visible across all of southern Africa. Khoisan people of southern Africa built directional knowledge around it.",
         "traditional_uses": {
             "navigation": "Critical southern navigation reference for Khoisan and Zulu people.",
@@ -232,6 +240,7 @@ stars_data = [
         "african_names": {
             "ancient_egyptian": "Part of Sah constellation",
         },
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/27/Rigel_2.jpg",
         "cultural_significance": "Part of Orion-called Sah in Egyptian tradition-representing Osiris, god of the afterlife. The Giza pyramid complex is aligned to Orion`s belt with Rigel anchoring the constellation below.",
         "traditional_uses": {
             "navigation": "Orion used widely across Africa for directional orientation",
@@ -258,6 +267,7 @@ stars_data = [
             "agriculture": None,
             "ceremony": None,
         },
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Beta_Centauri.jpg",
         "seasonal_associations": "Circumpolar from southern Africa-year round navigation reference. Season rising angle used to determine time of the year.",
         "mythological_context": "While specific African mythological associations with Hadar are not well-documented, its consistent pairing with Alpha Centauri in navigation traditions suggest the two stars were conceptualized together in southern African cosmological framework.",
     },

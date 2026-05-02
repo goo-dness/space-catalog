@@ -1,6 +1,7 @@
-from pydantic import BaseModel, ConfigDict
-from typing import Optional
 from datetime import datetime
+from typing import Optional
+
+from pydantic import BaseModel, ConfigDict
 
 
 class MessierObjectBase(BaseModel):
@@ -13,6 +14,7 @@ class MessierObjectBase(BaseModel):
     apparent_magnitude: Optional[float] = None
     right_ascension: Optional[str] = None
     declination: Optional[str] = None
+    image_url: Optional[str] = None
     description: Optional[str] = None
     fun_facts: Optional[str] = None
     african_context: Optional[str] = None

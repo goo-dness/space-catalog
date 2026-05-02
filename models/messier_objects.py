@@ -1,6 +1,8 @@
-from sqlalchemy import Column, Integer, String, Float, DateTime
-from core.database import Base
 from datetime import datetime, timezone
+
+from sqlalchemy import Column, DateTime, Float, Integer, String
+
+from core.database import Base
 
 
 class MessierObjects(Base):
@@ -15,6 +17,7 @@ class MessierObjects(Base):
     distance_light_years = Column(Float)
     apparent_magnitude = Column(Float)
     right_ascension = Column(String)
+    image_url = Column(String)
     declination = Column(String)
     description = Column(String)
     fun_facts = Column(String)

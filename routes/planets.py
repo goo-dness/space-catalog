@@ -1,9 +1,11 @@
+from typing import List
+
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
+
 from core.database import SessionLocal
 from models.planets import Planet
 from schemas.planets import PlanetCreate, PlanetResponse
-from typing import List
 
 router = APIRouter()
 
@@ -16,7 +18,7 @@ def get_db():
         db.close()
 
 
-@router.get("/planets", response_model=List[PlanetCreate])
+@router.get("/planets", response_model=List[PlanetResponse])
 def get_planets(db: Session = Depends(get_db)):
     return db.query(Planet).all()
 
