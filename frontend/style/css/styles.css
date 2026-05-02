@@ -551,7 +551,7 @@ a {
 
 .detail-value {
     color: var(--text-primary);
-    font-weight: 600;
+    font-weight: normal;
 }
 
 .african-context {
@@ -588,12 +588,33 @@ a {
 }
 
 .detail-image {
-    width: 100%;
-    max-height: 400px;
+    width: 400px;
+    height: 400px;
     object-fit: cover;
     border-radius: 12px;
     margin-bottom: 24px;
+    flex-shrink: 0;
 }
 .catalog-card {
     overflow: hidden;
+}
+.detail-card {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    padding: 2rem;
+    flex-direction: column;
+}
+.detail-african {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+.detail-info {
+    flex: 1;
+}
+.detail-top {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
 }

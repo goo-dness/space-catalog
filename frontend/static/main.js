@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       <h3>${star.name}</h3>
       <p class="card-type">Star &bull; ${star.constellation}</p>
       <p>${star.cultural_significance}</p>
-      <a href="stars.html" class="card-link">Learn more</a>
+      <a href="star-detail.html" class="card-link">Learn more</a>
     `;
     featuredCards.appendChild(card);
   });
