@@ -46,15 +46,34 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.getElementById("messier-count").textContent = messier.length;
 
   const featuredCards = document.getElementById("featured-cards");
-  stars.slice(0, 3).forEach((star) => {
+  const allObjects = [
+    ...stars.map((s) => ({ ...s, type: "Star" })),
+    ...planets.map((p) => ({ ...p, type: "Planet" })),
+    ...messier.map((m) => ({ ...m, type: "Messier Object" })),
+  ];
+  const today = new Date();
+  const daySeed = today.getDate() + today.getMonth() + today.getFullYear();
+
+  const startIndex = daySeed % allObjects.length;
+  const featured = allObjects.slice(startIndex, startIndex + 3);
+
+  featured.forEach((obj) => {
     const card = document.createElement("div");
     card.className = "card";
+    card.style.cursor = "pointer";
+    card.addEventListener("click", () => {
+      if (obj.type === "Star")
+        window.location.href = `star-detail.html?id=${obj.id}`;
+      else if (obj.type === "Planet")
+        window.location.href = `planet-detail.html?id=${obj.id}`;
+      else window.location.href = `messier-detail.html?id=${obj.id}`;
+    });
     card.innerHTML = `
-      <h3>${star.name}</h3>
-      <p class="card-type">Star &bull; ${star.constellation}</p>
-      <p>${star.cultural_significance}</p>
-      <a href="stars.html?id=${star.id}" class="card-link">Learn more</a>
-    `;
+      <h3>${obj.name}</h3>
+      <p class="card-type>${obj.type}</p>
+      <p>${obj.description || obj.common_name || "Learn more about this object"}</p>
+      <a class="card-link">Learn more &rarr;</a>
+      `;
     featuredCards.appendChild(card);
   });
 
