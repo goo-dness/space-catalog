@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         <h3>${agency.name}</h3>
         <span class="catalog-badge">${agency.abbreviation}</span>
       </div>
-      <p class="catalog-description">${agency.description}</p>
       <div class="catalog-details">
         <div class="detail">
           <span class="detail-label">Country</span>
@@ -36,10 +35,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           <span class="detail-label">Missions count</span>
           <span class="detail-value">${agency.missions_count}</span>
         </div>
-      </div
-      <div class="african-context">
-        <h4>African Relevance</h4>
-        <p>${agency.african_relevance}</p>
+      </div>
       </div>
       `;
     grid.appendChild(card);

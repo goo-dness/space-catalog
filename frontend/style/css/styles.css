@@ -49,13 +49,13 @@ a {
     z-index: 100;
 }
 .nav-brand h1 {
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: var(--accent-gold);
     letter-spacing: 1px;
     font-family: san-serif;
 }
 .nav-brand span {
-    font-size: 0.65rem;
+    font-size: 0.95rem;
     letter-spacing: 1px;
     text-transform: lowercase;
 }

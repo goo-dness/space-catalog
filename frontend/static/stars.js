@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       </div>
       <p class="catalog-description">${star.description || "Coming soon"}</p>
       <img src="${star.image_url}" alt="${star.name}" class="card-image"/>
-      <p class="catalog-fun_facts">${star.fun_facts || "Coming soon"}</p>
       <div class="catalog-details">
         <div class="detail">
           <span class="detail-label">Distance</span>
@@ -35,10 +34,6 @@ document.addEventListener("DOMContentLoaded", async () => {
           <span class="detail-label">Designation</span>
           <span class="detail-value">${star.designation}</span>
         </div>
-      </div>
-      <div class="african-context">
-        <h4>African Context</h4>
-        <p>${star.cultural_significance || "Research Ongoing"}</p>
       </div>
     `;
     grid.appendChild(card);
