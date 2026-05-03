@@ -16,30 +16,34 @@ document.addEventListener("DOMContentLoaded", async () => {
   container.innerHTML = `
     <a href="planets.html" class="back-link">&larr; Back to planets</a>
     <div class="detail-card">
+     <div class="detail-top">
       <img src="${planet.image_url}" alt="${planet.name}" class="detail-image"/>
-      <div class="detail-header">
-        <h2>${planet.name}</h2>
-        <span class="catalog-badge">${planet.planet_type || "Planet"}</span>
+       <div class="detail-info">
+        <div class="detail-header">
+         <h2>${planet.name}</h2>
+         <span class="catalog-badge">${planet.planet_type || "Planet"}</span>
+       </div>
+       <p class="detail-description">${planet.description}</p>
+       <div class="catalog-details">
+         <div class="detail">
+           <span class="detail-label">Distance from Sun</span>
+           <span class="detail-value">${planet.distance_from_sun} km</span>
+         </div>
+         <div class="detail">
+           <span class="detail-label">Moons</span>
+           <span class="detail-value">${planet.number_of_moons}</span>
+         </div>
+         <div class="detail">
+           <span class="detail-label">Orbital Period</span>
+           <span class="detail-value">${planet.orbital_period} days</span>
+         </div>
+         <div class="detail">
+           <span class="detail-label">Fun Facts</span>
+           <span class="detail-value">${planet.fun_facts}</span>
+         </div>
+        </div>
+       </div>
       </div>
-      <p class="detail-description">${planet.description}</p>
-      <div class="catalog-details">
-        <div class="detail">
-          <span class="detail-label">Distance from Sun</span>
-          <span class="detail-value">${planet.distance_from_sun} km</span>
-        </div>
-        <div class="detail">
-          <span class="detail-label">Moons</span>
-          <span class="detail-value">${planet.number_of_moons}</span>
-        </div>
-        <div class="detail">
-          <span class="detail-label">Orbital Period</span>
-          <span class="detail-value">${planet.orbital_period} days</span>
-        </div>
-        <div class="detail">
-          <span class="detail-label">Fun Facts</span>
-          <span class="detail-value">${planet.fun_facts}</span>
-        </div>
-      </div>
-    </div>
+     </div>
   `;
 });
