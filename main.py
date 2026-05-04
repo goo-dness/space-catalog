@@ -35,3 +35,11 @@ app.include_router(apod_router, prefix="/api/v1")
 @app.get("/")
 def root():
     return {"message": "Welcome to Space Catalog"}
+
+
+@app.get("/seed-database-now")
+def seed_database():
+    import subprocess
+
+    result = subprocess.run(["python", "data/seed.py"], capture_output=True, text=True)
+    return {"stdout": result.stdout, "stderr": result.stderr}
