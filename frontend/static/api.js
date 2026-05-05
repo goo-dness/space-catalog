@@ -1,4 +1,4 @@
-const API_BASE = "http://127.0.0.1:8000/api/v1";
+const API_BASE = "https://space-catalog-production.up.railway.app";
 
 async function fetchAPOD() {
   const response = await fetch(`${API_BASE}/apod`);
