@@ -1,4 +1,5 @@
 from contextlib import asynccontextmanager
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -12,15 +13,18 @@ from routes.messier_objects import router as messier_router
 from routes.planets import router as planet_router
 from routes.stars import router as star_router
 
+
 @asynccontextmanager
-async def lifespam(app: FastAPI):
+async def lifespan(app: FastAPI):
     Base.metadata.create_all(bind=engine)
     yield
+
 
 app = FastAPI(
     title="Space Catalog",
     description="A space education knowledge platform",
     version="0.1.0",
+    lifespan=lifespan,
 )
 
 app.add_middleware(
