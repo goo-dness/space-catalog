@@ -14,7 +14,6 @@ class Base(DeclarativeBase):
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-Base.metadata.create_all(bind=engine)
 
 
 def get_db():
