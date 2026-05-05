@@ -8,7 +8,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
-  const response = await fetch(`http://127.0.0.1:8000/api/v1/stars/${star_id}`);
+  const response = await fetch(
+    `https://space-catalog-production.up.railway.app/api/v1/stars/${star_id}`,
+  );
   const star = await response.json();
 
   container.innerHTML = `
