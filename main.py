@@ -35,3 +35,8 @@ app.include_router(apod_router, prefix="/api/v1")
 @app.get("/")
 def root():
     return {"message": "Welcome to Space Catalog"}
+
+
+@app.get("startup")
+def configure_db():
+    Base.metadata.create_all(bind=engine)
