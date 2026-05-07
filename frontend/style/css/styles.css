@@ -671,6 +671,7 @@ a {
     /*DETAIL PAGE FIX*/
     .detail-top {
         flex-direction: column;
+        align-items: flex-start;
     }
     .detial-image {
         width: 100%;
