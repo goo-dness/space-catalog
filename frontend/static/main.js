@@ -22,20 +22,49 @@ document.addEventListener("DOMContentLoaded", async () => {
       </div>
     `;
   } else if (apod.media_type === "video") {
-    apodContainer.innerHTML = `
-      <div class="apod-video-wrapper">
-        <iframe
-          src="${apod.url}"
-          title="${apod.title}"
-          frameborder="0"
-          allowfullscreen
-          class="apod-video">
-        </iframe>
-      </div>
-      <div class="apod-info">
-        <h3 class="apod-title">${apod.title}</h3>
-        <p class="apod-date">${apod.date}</p>
-        <p class="apod-explanation">${apod.explanation}</p>
+
+    if (apod.url.includes("youtube.com") ||
+        apod.url.includes("youtu.be")) {
+
+      apodContainer.innerHTML = `
+        <div class="apod-video-wrapper">
+          <iframe
+            src="${apod.url}"
+            title="${apod.title}"
+            frameborder="0"
+            allowfullscreen
+            class="apod-video">
+          </iframe>
+        </div>
+
+        <div class="apod-info">
+          <h3 class="apod-title">${apod.title}</h3>
+          <p class="apod-date">${apod.date}</p>
+          <p class="apod-explanation">${apod.explanation}</p>
+        </div>
+      `;
+
+    } else {
+
+      apodContainer.innerHTML = `
+        <div class="apod-info">
+          <h3 class="apod-title">${apod.title}</h3>
+          <p class="apod-date">${apod.date}</p>
+
+          <p>
+            Video cannot be embedded.
+            <a href="${apod.url}" target="_blank">
+              Watch here
+            </a>
+          </p>
+
+          <p class="apod-explanation">
+            ${apod.explanation}
+          </p>
+        </div>
+      `;
+    }
+  }
       </div>
     `;
   }
