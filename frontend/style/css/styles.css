@@ -592,7 +592,7 @@ a {
 }
 
 .detail-image {
-    width: 400px;
+    width: 100%;
     height: 400px;
     object-fit: cover;
     border-radius: 12px;
@@ -604,9 +604,9 @@ a {
 }
 .detail-card {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     align-items: flex-start;
-    padding: 2rem;
+    width: 100%;
     flex-direction: column;
 }
 .detail-african {
