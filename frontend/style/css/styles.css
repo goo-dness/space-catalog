@@ -569,12 +569,14 @@ a {
     letter-spacing: 1px;
     text-transform: uppercase;
     margin-bottom: 0.5rem;
+    align-items: center;
 }
 
 .african-context p {
     color: var(--text-secondary);
     font-size: 0.85rem;
     line-height: 1.6;
+    align-items: center;
 }
 
 .loading {
@@ -584,7 +586,7 @@ a {
 }
 .card-image {
     width: 100%;
-    height: 180px;
+    height: 190px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 12px;
