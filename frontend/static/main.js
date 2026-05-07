@@ -65,7 +65,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       `;
     }
   }
-      </div>
     `;
   }
 
