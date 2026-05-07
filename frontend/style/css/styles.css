@@ -618,3 +618,101 @@ a {
     gap: 2rem;
     align-items: flex-start;
 }
+/* ===================
+    MOBILE RESPONSIVE FIXES
+    ==================== */
+@media (max-width: 768px) {
+    /*NAVBAR*/
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .nav-linlks {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    /*HERO*/
+    .hero {
+        padding: 3rem 1rem;
+        min-height: auto;
+    }
+    .hero-content h2 {
+        font-size: 2.2rem;
+    }
+    .hero-content h3 {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /*GENERAL SECTION PADDING*/
+    .featured,
+    .catalog,
+    .apod,
+    .page-hero {
+        padding: 2rem 1rem;
+    }
+
+    /*APOD SECTION*/
+    .apod-container {
+        grid-template-columns: 1fr;
+    }
+    /*DETAIL PAGE FIX*/
+    .detail-top {
+        flex-direction: column;
+    }
+    .detial-image {
+        width: 100%;
+        height: auto;
+    }
+
+    /*AFRICAN GRID*/
+    .detail-african {
+        grid-template-columns: 1fr;
+    }
+
+    /*CARD GRIDS*/
+    .cards-grids,
+    .catalog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /*CARD PADDING*/
+    .card,
+    .catalog-card,
+    .detail-card {
+        padding: 2rem;
+    }
+
+    /*PAGE TITLES*/
+    .page-hero h2 {
+        font-size: 2rem;
+    }
+
+    /*STATS*/
+    .stats {
+        padding: 2rem 1rem;
+        gap: 1rem;
+    }
+
+    .stat-card {
+        width: 100%;
+    }
+
+    /*FIX LONG TEXT OVERFLOW*/
+    P,
+    h1,
+    h2,
+    h3,
+    h4 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+}
