@@ -38,53 +38,52 @@ document.addEventListener("DOMContentLoaded", async () => {
           <p class="apod-explanation">${apod.explanation}</p>
         </div>
       `;
-  };
+  }
 });
 
-  const counters = {
-    "star-count": stars.length,
-    "planet-count": planets.length,
-    "agency-count": agencies.length,
-    "messier-count": messier.length,
-  };
+const counters = {
+  "star-count": stars.length,
+  "planet-count": planets.length,
+  "agency-count": agencies.length,
+  "messier-count": messier.length,
+};
 
-  Object.entries(counters).forEach(([id, value]) => {
-    document.getElementById(id).textContent = value;
+Object.entries(counters).forEach(([id, value]) => {
+  document.getElementById(id).textContent = value;
+});
+
+const featuredCards = document.getElementById("featured-cards");
+const allObjects = [
+  ...stars.map((s) => ({ ...s, type: "Star" })),
+  ...planets.map((p) => ({ ...p, type: "Planet" })),
+  ...messier.map((m) => ({ ...m, type: "Messier Object" })),
+];
+const today = new Date();
+const daySeed = today.getDate() + today.getMonth() + today.getFullYear();
+
+const startIndex = daySeed % allObjects.length;
+const featured = allObjects.slice(startIndex, startIndex + 3);
+
+featured.forEach((obj) => {
+  const card = document.createElement("div");
+  card.className = "card";
+  card.style.cursor = "pointer";
+  card.addEventListener("click", () => {
+    if (obj.type === "Star")
+      window.location.href = `star-detail.html?id=${obj.id}`;
+    else if (obj.type === "Planet")
+      window.location.href = `planet-detail.html?id=${obj.id}`;
+    else window.location.href = `messier-detail.html?id=${obj.id}`;
   });
-
-  const featuredCards = document.getElementById("featured-cards");
-  const allObjects = [
-    ...stars.map((s) => ({ ...s, type: "Star" })),
-    ...planets.map((p) => ({ ...p, type: "Planet" })),
-    ...messier.map((m) => ({ ...m, type: "Messier Object" })),
-  ];
-  const today = new Date();
-  const daySeed = today.getDate() + today.getMonth() + today.getFullYear();
-
-  const startIndex = daySeed % allObjects.length;
-  const featured = allObjects.slice(startIndex, startIndex + 3);
-
-  featured.forEach((obj) => {
-    const card = document.createElement("div");
-    card.className = "card";
-    card.style.cursor = "pointer";
-    card.addEventListener("click", () => {
-      if (obj.type === "Star")
-        window.location.href = `star-detail.html?id=${obj.id}`;
-      else if (obj.type === "Planet")
-        window.location.href = `planet-detail.html?id=${obj.id}`;
-      else window.location.href = `messier-detail.html?id=${obj.id}`;
-    });
-    card.innerHTML = `
+  card.innerHTML = `
       <h3>${obj.name}</h3>
       <p class="card-type>${obj.type}</p>
       <p>${obj.description || obj.common_name || "Learn more about this object"}</p>
       <a class="card-link">Learn more &rarr;</a>
       `;
-    featuredCards.appendChild(card);
-  });
-
-  console.log("stars:", stars);
-  console.log("planets:", planets);
-  console.log("apod:", apod);
+  featuredCards.appendChild(card);
 });
+
+console.log("stars:", stars);
+console.log("planets:", planets);
+console.log("apod:", apod);
