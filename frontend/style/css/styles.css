@@ -62,7 +62,8 @@ a {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
 }
 .nav-links a {
     color: var(--text-secondary);
@@ -81,7 +82,7 @@ a {
     min-height: 90vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-conwtent: center;
     text-align: center;
     padding: 4rem 2rem;
     background: radial-gradient(
@@ -543,6 +544,9 @@ a {
     display: flex;
     justify-content: space-between;
     font-size: 0.85rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    width: 100%;
 }
 
 .detail-label {
@@ -631,7 +635,7 @@ a {
     }
 
     .nav-linlks {
-        flex-wrap: wrap;
+        grid-template-columns: repeat(4, 1fr);
         justify-content: center;
         gap: 1rem;
     }
