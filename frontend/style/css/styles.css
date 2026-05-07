@@ -605,8 +605,7 @@ a {
 .detail-card {
     display: flex;
     gap: 1rem;
-    align-items: left;
-    width: 100px;
+    align-items: flex-start;
     flex-direction: column;
 }
 .detail-african {
@@ -619,6 +618,7 @@ a {
 }
 .detail-top {
     display: flex;
+    flex-direction: row;
     gap: 2rem;
     align-items: flex-start;
 }
@@ -634,7 +634,7 @@ a {
         gap: 1rem;
     }
 
-    .nav-linlks {
+    .nav-links {
         grid-template-columns: repeat(4, 1fr);
         justify-content: center;
         gap: 1rem;
@@ -673,7 +673,7 @@ a {
         flex-direction: column;
         align-items: flex-start;
     }
-    .detial-image {
+    .detail-image {
         width: 100%;
         height: auto;
     }
