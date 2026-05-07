@@ -22,11 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       </div>
     `;
   } else if (apod.media_type === "video") {
-
-    if (apod.url.includes("youtube.com") ||
-        apod.url.includes("youtu.be")) {
-
-      apodContainer.innerHTML = `
+    apodContainer.innerHTML = `
         <div class="apod-video-wrapper">
           <iframe
             src="${apod.url}"
@@ -36,42 +32,25 @@ document.addEventListener("DOMContentLoaded", async () => {
             class="apod-video">
           </iframe>
         </div>
-
         <div class="apod-info">
           <h3 class="apod-title">${apod.title}</h3>
           <p class="apod-date">${apod.date}</p>
           <p class="apod-explanation">${apod.explanation}</p>
         </div>
       `;
+  };
+});
 
-    } else {
+  const counters = {
+    "star-count": stars.length,
+    "planet-count": planets.length,
+    "agency-count": agencies.length,
+    "messier-count": messier.length,
+  };
 
-      apodContainer.innerHTML = `
-        <div class="apod-info">
-          <h3 class="apod-title">${apod.title}</h3>
-          <p class="apod-date">${apod.date}</p>
-
-          <p>
-            Video cannot be embedded.
-            <a href="${apod.url}" target="_blank">
-              Watch here
-            </a>
-          </p>
-
-          <p class="apod-explanation">
-            ${apod.explanation}
-          </p>
-        </div>
-      `;
-    }
-  }
-    `;
-  }
-
-  document.getElementById("star-count").textContent = stars.length;
-  document.getElementById("planet-count").textContent = planets.length;
-  document.getElementById("agency-count").textContent = agencies.length;
-  document.getElementById("messier-count").textContent = messier.length;
+  Object.entries(counters).forEach(([id, value]) => {
+    document.getElementById(id).textContent = value;
+  });
 
   const featuredCards = document.getElementById("featured-cards");
   const allObjects = [
