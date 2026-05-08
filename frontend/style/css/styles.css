@@ -725,11 +725,6 @@ a {
     padding: 2rem;
 }
 
-@media (max-width: 768px) {
-    .news-grid {
-        grid-template-columns: 1fr;
-    }
-}
 /* ===================
     MOBILE RESPONSIVE FIXES
     ==================== */
@@ -827,5 +822,8 @@ a {
     h4 {
         word-wrap: break-word;
         overflow-wrap: break-word;
+    }
+    .news-grid {
+        grid-template-columns: 1fr;
     }
 }
