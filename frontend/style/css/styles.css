@@ -625,6 +625,29 @@ a {
     align-items: flex-start;
 }
 /* News page */
+.page-header {
+    padding: 4rem;
+    text-align: center;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(108, 99, 255, 0.1) 0%,
+        rgba(10, 10, 15, 0) 70%
+    );
+    border-bottom: 1px solid var(--border-color);
+}
+
+.page-header h2 {
+    font-size: 3rem;
+    color: var(--accent-gold);
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
 .news-section {
     padding: 2rem;
     max-width: 1200px;
