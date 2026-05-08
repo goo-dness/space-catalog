@@ -730,19 +730,32 @@ a {
     ==================== */
 @media (max-width: 768px) {
     /*NAVBAR*/
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem;
-        gap: 1rem;
-    }
+    @media (max-width: 768px) {
+        .navbar {
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            gap: 1rem;
+        }
 
-    .nav-links {
-        grid-template-columns: repeat(4, 1fr);
-        justify-content: center;
-        gap: 1rem;
-    }
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            /* allows links to wrap naturally to the next line */
+            justify-content: center;
+            /* centers all links */
+            gap: 0.6rem;
+            /* tighter gap so they don't spread too wide */
+            padding: 0;
+        }
 
+        .nav-links li a {
+            font-size: 0.85rem;
+            /* slightly smaller text so links fit better */
+            padding: 0.3rem 0.5rem;
+            display: inline-block;
+        }
+    }
     /*HERO*/
     .hero {
         padding: 3rem 1rem;
