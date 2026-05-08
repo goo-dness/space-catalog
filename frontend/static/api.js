@@ -21,3 +21,11 @@ async function fetchMessierObjects() {
   const response = await fetch(`${API_BASE}/messier`);
   return await response.json();
 }
+
+async function fetchNews() {
+  const response = await fetch(
+    "https://api.spaceflightnewsapi.net/v4/articles/?limit=20",
+  );
+  //Fetches 20 news from the api
+  return await response.json();
+}
