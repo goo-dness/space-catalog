@@ -19,8 +19,19 @@ def get_db():
 
 
 @router.get("/planets", response_model=List[PlanetResponse])
-def get_planets(db: Session = Depends(get_db)):
-    return db.query(Planet).all()
+def get_planets(
+    db: Session = Depends(get_db),
+    is_exoplanet: Optional[bool] = Query(None),
+    # optional query param so frontend can filter
+    # /api/v1/planets - all planets
+    # /api/v1/planets?is_exoplanet=fale - solar system only
+    # /api/v1/planets?is_exoplanet=true - exoplanets only
+):
+    query = db.query(Planet)
+    if is_exoplanet is not None:
+        query = query.filter(Planet.is_exoplanet == is_exoplanet)
+        # only apply filter if the param was actually passed
+        return query.all()
 
 
 @router.get("/planets/{planet_id}", response_model=PlanetResponse)

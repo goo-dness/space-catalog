@@ -19,6 +19,14 @@ class PlanetBase(BaseModel):
     visible_from_nigeria: Optional[bool] = None
     naked_eye_view: Optional[bool] = None
 
+    # new exoplanets fields
+    is_exoplanet: Optional[bool] = None
+    host_star: Optional[str] = None
+    discovery_method: Optional[str] = None
+    discovery_year: Optional[int] = None
+    distance_from_earth_ly: Optional[float] = None
+    african_context: Optional[str] = None
+
 
 class PlanetCreate(PlanetBase):
     pass
@@ -26,4 +34,4 @@ class PlanetCreate(PlanetBase):
 
 class PlanetResponse(PlanetBase):
     id: int
-    model_config = ConfigDict(from_attributtes=True)
+    model_config = ConfigDict(from_attributes=True)

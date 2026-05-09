@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 
-from sqlalchemy import Boolean, Column, DateTime, Float, Integer, String
+from sqlalchemy import Boolean, Column, DateTime, Float, Integer, String, Text
 
 from core.database import Base
 
@@ -24,6 +24,17 @@ class Planet(Base):
     image_url = Column(String)
     visible_from_nigeria = Column(Boolean, default=False)
     naked_eye_view = Column(Boolean, default=False)
+
+    is_exoplanet = Column(Boolean, default=True)
+    # distinguishes solar system planets from exoplanets
+    host_star = Column(String)
+
+    discovery_method = Column(String)
+
+    discovery_year = Column(Integer)
+
+    distance_from_earth_ly = Column(Float)
+    african_context = Column(Text)
 
     # Timestamps
     created_at = Column(
