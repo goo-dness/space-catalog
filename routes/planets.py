@@ -31,7 +31,7 @@ def get_planets(
     if is_exoplanet is not None:
         query = query.filter(Planet.is_exoplanet == is_exoplanet)
         # only apply filter if the param was actually passed
-        return query.all()
+    return query.all()
 
 
 @router.get("/planets/{planet_id}", response_model=PlanetResponse)
