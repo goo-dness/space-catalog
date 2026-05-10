@@ -12,38 +12,38 @@ async function loadPlanets() {
   }
 }
 
-  grid.innerHTML = "<p class='loading'>Loading planets...</p>";
+grid.innerHTML = "<p class='loading'>Loading planets...</p>";
 
-  const [planets, countData] = await Promise.all([
-    fetchPlanets(currentPage, limit, currentFilters),
-    fetchPlanetsCount(currentFilters),
-  ]);
-  console.log(countData);
-  const total = countData.count;
-  const totalPages = Math.ceil(total / limit);
-  // e.g 1460 / 20 = 73 pages
+const [planets, countData] = await Promise.all([
+  fetchPlanets(currentPage, limit, currentFilters),
+  fetchPlanetsCount(currentFilters),
+]);
+console.log(countData);
+const total = countData.count;
+const totalPages = Math.ceil(total / limit);
+// e.g 1460 / 20 = 73 pages
 
-  grid.innerHTML = "";
+grid.innerHTML = "";
 
-  if (planets.length === 0) {
-    grid.innerHTML = "<p class='loading'>No planets found.</p>";
-    updatePagination(totalPages);
-    return;
-  }
+if (planets.length === 0) {
+  grid.innerHTML = "<p class='loading'>No planets found.</p>";
+  updatePagination(totalPages);
+  return;
+}
 
-  planets.forEach((planet) => {
-    const card = document.createElement("div");
-    card.className = "catalog-card";
-    card.style.cursor = "pointer";
+planets.forEach((planet) => {
+  const card = document.createElement("div");
+  card.className = "catalog-card";
+  card.style.cursor = "pointer";
 
-    card.addEventListener("click", () => {
-      window.location.href = `planet-detail.html?id=${planet.id}`;
-    });
+  card.addEventListener("click", () => {
+    window.location.href = `planet-detail.html?id=${planet.id}`;
+  });
 
-    const isExoplanet = planet.is_exoplanet;
+  const isExoplanet = planet.is_exoplanet;
 
-    const detailsHTML = isExoplanet
-      ? `
+  const detailsHTML = isExoplanet
+    ? `
         <div class="detail">
           <span class="detail-label">Host Star</span>
           <span class="detail-value">${planet.host_star || "Unknown"}</span>
@@ -61,7 +61,7 @@ async function loadPlanets() {
           <span class="detail-value">${planet.orbital_period ? planet.orbital_period.toFixed(2) + " days" : "Unknown"}</span>
         </div>
       `
-      : `
+    : `
         <div class="detail">
           <span class="detail-label">Distance from Sun</span>
           <span class="detail-value">${planet.distance_from_sun ? planet.distance_from_sun + " million km" : "N/A"}</span>
@@ -76,7 +76,7 @@ async function loadPlanets() {
         </div>
       `;
 
-    card.innerHTML = `
+  card.innerHTML = `
       <div class="catalog-card-header">
         <h3>${planet.name}</h3>
         <span class="catalog-badge">${isExoplanet ? "Exoplanet" : "Planet"}</span>
@@ -99,11 +99,10 @@ async function loadPlanets() {
       </div>
     `;
 
-    grid.appendChild(card);
-  });
+  grid.appendChild(card);
+});
 
-  updatePagination(totalPages);
-}
+updatePagination(totalPages);
 
 function updatePagination(totalPages) {
   const prevBtn = document.getElementById("prev-btn");
