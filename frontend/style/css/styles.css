@@ -735,7 +735,7 @@ a {
 #prev-btn,
 #next-btn {
     background-color: var(--accent-gold--);
-    color: #0a0a0f;
+    color: var(--text-primary--);
     border: none;
     padding: 0.85reem 2rem;
     border-radius: 4px;
