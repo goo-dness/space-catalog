@@ -13,9 +13,9 @@ stars_data = [
             "Dogon": "Sigi Tolo",
             "ancient_egyptian": "Sopdet",
         },
-        "cultural_significance": "Central to Dogon cosmology. Ancient Egyotians orientedthe Isis temple at Dendera towords Sirius. Its heliacal rising mark the Egyptian New Year and the Nile flood.",
+        "cultural_significance": "Central to Dogon cosmology. Ancient Egyptians oriented the Isis temple at Dendera towards Sirius. Its heliacal rising mark the Egyptian New Year and the Nile flood.",
         "traditional_uses": {
-            "navigation": "Used by East African coastal traders for open sa orientation.",
+            "navigation": "Used by East African coastal traders for open sea orientation.",
             "agriculture": "Nile flood calendar marker in ancient Egypt.",
             "ceremony": "Dogon Sigi festival cycle tied to Sirius orbital period.",
             "calendar": None,

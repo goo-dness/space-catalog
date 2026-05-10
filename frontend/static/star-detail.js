@@ -24,7 +24,15 @@ document.addEventListener("DOMContentLoaded", async () => {
             <span class="catalog-badge">${star.star_type || "Star"}</span>
           </div>
           <p class="detail-description">${star.description}</p>
+          <div class="detail">
+            <span class="detail-label">Fun Facts</span>
+            <span class="detail-value">${star.fun_facts}</span>
+          </div>
           <div class="catalog-details">
+            <div class="detail">
+              <span class="detail-label">African Names</span>
+              <span class="detail-value">${star.african_names}</span>
+            </div>
             <div class="detail">
               <span class="detail-label">Distance</span>
               <span class="detail-value">${star.distance_light_years} ly</span>
@@ -36,10 +44,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             <div class="detail">
               <span class="detail-label">Magnitude</span>
               <span class="detail-value">${star.magnitude}</span>
-            </div>
-            <div class="detail">
-              <span class="detail-label">Fun Facts</span>
-              <span class="detail-value">${star.fun_facts}</span>
             </div>
           </div>
         </div>
@@ -56,6 +60,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         <div class="african-context">
           <h4>Seasonal Associations</h4>
           <p>${star.seasonal_associations || "Research Ongoing"}</p>
+        </div>
+        <div class="african-context">
+          <h4>Traditional Uses</h4>
+          <p>${star.traditional_uses || "Research Ongoing"}</p>
         </div>
       </div>
     </div>
