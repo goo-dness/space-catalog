@@ -1,5 +1,5 @@
 let currentPage = 1;
-const limit = 20;
+const limit = 15;
 let currentFilters = {};
 // track current page and filters across function calls
 
