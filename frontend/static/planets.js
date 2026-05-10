@@ -10,19 +10,18 @@ async function loadPlanets() {
   } catch (error) {
     console.error("Failed to load planets:", error);
   }
+
+  grid.innerHTML = "<p class='loading'>Loading planets...</p>";
+
+  const [planets, countData] = await Promise.all([
+    fetchPlanets(currentPage, limit, currentFilters),
+    fetchPlanetsCount(currentFilters),
+  ]);
+  console.log(countData);
+  const total = countData.count;
+  const totalPages = Math.ceil(total / limit);
+  // e.g 1460 / 20 = 73 pages
 }
-
-grid.innerHTML = "<p class='loading'>Loading planets...</p>";
-
-const [planets, countData] = await Promise.all([
-  fetchPlanets(currentPage, limit, currentFilters),
-  fetchPlanetsCount(currentFilters),
-]);
-console.log(countData);
-const total = countData.count;
-const totalPages = Math.ceil(total / limit);
-// e.g 1460 / 20 = 73 pages
-
 grid.innerHTML = "";
 
 if (planets.length === 0) {
