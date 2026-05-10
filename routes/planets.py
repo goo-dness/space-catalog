@@ -18,20 +18,29 @@ def get_db():
         db.close()
 
 
-@router.get("/planets", response_model=List[PlanetResponse])
-def get_planets(
+@router.get("/planets/count")
+def get_planets_count(
     db: Session = Depends(get_db),
     is_exoplanet: Optional[bool] = Query(None),
-    # optional query param so frontend can filter
-    # /api/v1/planets - all planets
-    # /api/v1/planets?is_exoplanet=fale - solar system only
-    # /api/v1/planets?is_exoplanet=true - exoplanets only
+    search: Optional[str] = Query(None),
+    discovery_method: Optional[str] = Query(None),
 ):
+    # separate counts endpoints so frontend knows total pages
     query = db.query(Planet)
     if is_exoplanet is not None:
         query = query.filter(Planet.is_exoplanet == is_exoplanet)
-        # only apply filter if the param was actually passed
-    return query.all() or []
+    if search:
+        query = query.filter(
+            Planet.name.ilike(f"%{search}%") | Planet.host_star.ilike(f"%{search}%")
+        )
+        # ilike does case insensitve search
+        # % means match anything before or after the term
+    if discovery_method:
+        query = query.filter(Planet.discovery_method == discovery_method)
+
+    offset = (page - 1) * limit
+    # page 1 = skip 0, page 2 = skip 2, page 3 = skip 40
+    return query.offset(offset).limit(limit).all() or []
 
 
 @router.get("/planets/{planet_id}", response_model=PlanetResponse)

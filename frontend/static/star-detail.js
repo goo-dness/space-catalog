@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", async () => {
           </div>
           <p class="detail-description">${star.description}</p>
           <div class="detail">
-            <span class="detail-label">Fun Facts</span>
-            <span class="detail-value">${star.fun_facts}</span>
+            <p class="detail-label">Fun Facts</p>
+            <p class="detail-value">${star.fun_facts}</p>
           </div>
           <div class="catalog-details">
             <div class="detail">
