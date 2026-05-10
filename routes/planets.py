@@ -40,7 +40,7 @@ def get_planets_count(
 
         total = query.count()
 
-        return {"count": total}
+        return {"total": total}
 
 
 @router.get("/planets", response_model=List[PlanetResponse])

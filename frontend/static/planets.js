@@ -4,12 +4,8 @@ let currentFilters = {};
 // track current page and filters across function calls
 
 async function loadPlanets() {
-  try {
-    const grid = document.getElementById("planets-grid");
-    // matches id="planets-grid" in your HTML
-  } catch (error) {
-    console.error("Failed to load planets:", error);
-  }
+  const grid = document.getElementById("planets-grid");
+  // matches id="planets-grid" in your HTML
 
   grid.innerHTML = "<p class='loading'>Loading planets...</p>";
 
@@ -18,7 +14,7 @@ async function loadPlanets() {
     fetchPlanetsCount(currentFilters),
   ]);
   console.log(countData);
-  const total = countData.count;
+  const total = countData.total;
   const totalPages = Math.ceil(total / limit);
   // e.g 1460 / 20 = 73 pages
 
