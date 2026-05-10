@@ -21,28 +21,28 @@ async function loadPlanets() {
   const total = countData.count;
   const totalPages = Math.ceil(total / limit);
   // e.g 1460 / 20 = 73 pages
-}
-grid.innerHTML = "";
 
-if (planets.length === 0) {
-  grid.innerHTML = "<p class='loading'>No planets found.</p>";
-  updatePagination(totalPages);
-  return;
-}
+  grid.innerHTML = "";
 
-planets.forEach((planet) => {
-  const card = document.createElement("div");
-  card.className = "catalog-card";
-  card.style.cursor = "pointer";
+  if (planets.length === 0) {
+    grid.innerHTML = "<p class='loading'>No planets found.</p>";
+    updatePagination(totalPages);
+    return;
+  }
 
-  card.addEventListener("click", () => {
-    window.location.href = `planet-detail.html?id=${planet.id}`;
-  });
+  planets.forEach((planet) => {
+    const card = document.createElement("div");
+    card.className = "catalog-card";
+    card.style.cursor = "pointer";
 
-  const isExoplanet = planet.is_exoplanet;
+    card.addEventListener("click", () => {
+      window.location.href = `planet-detail.html?id=${planet.id}`;
+    });
 
-  const detailsHTML = isExoplanet
-    ? `
+    const isExoplanet = planet.is_exoplanet;
+
+    const detailsHTML = isExoplanet
+      ? `
         <div class="detail">
           <span class="detail-label">Host Star</span>
           <span class="detail-value">${planet.host_star || "Unknown"}</span>
@@ -60,7 +60,7 @@ planets.forEach((planet) => {
           <span class="detail-value">${planet.orbital_period ? planet.orbital_period.toFixed(2) + " days" : "Unknown"}</span>
         </div>
       `
-    : `
+      : `
         <div class="detail">
           <span class="detail-label">Distance from Sun</span>
           <span class="detail-value">${planet.distance_from_sun ? planet.distance_from_sun + " million km" : "N/A"}</span>
@@ -75,7 +75,7 @@ planets.forEach((planet) => {
         </div>
       `;
 
-  card.innerHTML = `
+    card.innerHTML = `
       <div class="catalog-card-header">
         <h3>${planet.name}</h3>
         <span class="catalog-badge">${isExoplanet ? "Exoplanet" : "Planet"}</span>
@@ -98,11 +98,11 @@ planets.forEach((planet) => {
       </div>
     `;
 
-  grid.appendChild(card);
-});
+    grid.appendChild(card);
+  });
 
-updatePagination(totalPages);
-
+  updatePagination(totalPages);
+}
 function updatePagination(totalPages) {
   const prevBtn = document.getElementById("prev-btn");
   const nextBtn = document.getElementById("next-btn");
