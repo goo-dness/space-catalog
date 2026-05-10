@@ -4,8 +4,13 @@ let currentFilters = {};
 // track current page and filters across function calls
 
 async function loadPlanets() {
-  const grid = document.getElementById("planets-grid");
-  // matches id="planets-grid" in your HTML
+  try {
+    const grid = document.getElementById("planets-grid");
+    // matches id="planets-grid" in your HTML
+  } catch (error) {
+    console.error("Failed to load planets:", error);
+  }
+}
 
   grid.innerHTML = "<p class='loading'>Loading planets...</p>";
 
