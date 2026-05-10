@@ -665,8 +665,6 @@ a {
     border-radius: 12px;
     overflow: hidden;
     transition: transform 0.2s;
-    align-items: flex-start;
-    flex-direction: column;
 }
 
 .news-card:hover {
@@ -840,6 +838,5 @@ a {
     }
     .news-grid {
         grid-template-columns: 1fr;
-        flex-direction: column;
     }
 }
