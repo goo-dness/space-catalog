@@ -736,10 +736,10 @@ a {
     background-color: var(--bg-card--);
     border: 1px solid var(--border-color--);
     color: var(--text-primary--);
-    padding: 0.6rem 1.5rem;
+    padding: 1.6rem 1.5rem;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     transition:
         border-color 0.3s ease,
         0.3s ease;
