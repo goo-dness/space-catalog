@@ -38,9 +38,9 @@ def get_planets_count(
     if discovery_method:
         query = query.filter(Planet.discovery_method == discovery_method)
 
-        total = query.count()
+    total = query.count()
 
-        return {"total": total}
+    return {"total": total}
 
 
 @router.get("/planets", response_model=List[PlanetResponse])
