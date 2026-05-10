@@ -13,7 +13,9 @@ async function loadPlanets() {
     fetchPlanets(currentPage, limit, currentFilters),
     fetchPlanetsCount(currentFilters),
   ]);
-
+  countData = {
+    total: 1460,
+  };
   const total = countData.count;
   const totalPages = Math.ceil(total / limit);
   // e.g 1460 / 20 = 73 pages
