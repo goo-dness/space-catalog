@@ -38,9 +38,21 @@ def get_planets_count(
     if discovery_method:
         query = query.filter(Planet.discovery_method == discovery_method)
 
+        total = query.count()
+
+        return {"count": total}
+
+
+@router.get("/planets", response_model=List[PlanetResponse])
+def get_planets(
+    page: int = Query(1, ge=1),
+    limit: int = Query(20, ge=1, le=100),
+    db: Session = Depends(get_db),
+):
     offset = (page - 1) * limit
-    # page 1 = skip 0, page 2 = skip 2, page 3 = skip 40
-    return query.offset(offset).limit(limit).all() or []
+
+    planets = db.query(Planet).offset(offset).limit(limit).all()
+    return planets
 
 
 @router.get("/planets/{planet_id}", response_model=PlanetResponse)

@@ -9,8 +9,10 @@ async function loadPlanets() {
 
   grid.innerHTML = "<p class='loading'>Loading planets...</p>";
 
-  const planets = await fetchPlanets(currentPage, limit, currentFilters);
-  const countData = await fetchPlanetsCount(currentFilters);
+  const [planets, countData] = await Promise.all([
+    fetchPlanets(currentPage, limit, currentFilters),
+    fetchPlanetsCount(currentFilters),
+  ]);
   const total = countData.total;
   const totalPages = Math.ceil(total / limit);
   // e.g 1460 / 20 = 73 pages
