@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       <div class="catalog-details">
       <div class="detail">
         <span class="detail-label">African Names</span>
-        <span class="detail-value">${star.african_names}</span>
+        <span class="detail-value">${JSON.stringify(star.african_names)}</span>
       </div>
         <div class="detail">
           <span class="detail-label">Distance</span>

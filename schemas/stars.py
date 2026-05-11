@@ -50,6 +50,7 @@ class StarUpdate(BaseModel):
 # Response schema — what goes out
 class StarResponse(StarBase):
     id: int
+    name: str
     created_at: datetime
     updated_at: datetime
 
