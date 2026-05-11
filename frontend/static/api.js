@@ -35,8 +35,10 @@ async function fetchAgencies() {
   return await response.json();
 }
 
-async function fetchMessierObjects() {
-  const response = await fetch(`${API_BASE}/messier`);
+async function fetchMessierObjects(limit = 10, offset = 0) {
+  const response = await fetch(
+    `${API_BASE}/messier/?limit=${limit}&offset=${offset}`,
+  );
   return await response.json();
 }
 

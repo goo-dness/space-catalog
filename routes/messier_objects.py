@@ -1,9 +1,11 @@
-from fastapi import APIRouter, Depends, HTTPException
+from typing import List
+
+from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
+
 from core.database import SessionLocal
 from models.messier_objects import MessierObjects
 from schemas.messier_objects import MessierObjectCreate, MessierObjectResponse
-from typing import List
 
 router = APIRouter()
 
@@ -17,8 +19,13 @@ def get_db():
 
 
 @router.get("/messier", response_model=List[MessierObjectResponse])
-def get_messier_objects(db: Session = Depends(get_db)):
-    return db.query(MessierObjects).all()
+def get_messier_objects(
+    db: Session = Depends(get_db),
+    limit: int = Query(default=10, ge=1, le=100),
+    offset: int = Query(default=0, ge=0),
+):
+    objects = db.query(MessierObjects).offset(offset).limit(limit).all()
+    return objects
 
 
 @router.get("/messier/{object_id}", response_model=MessierObjectResponse)
