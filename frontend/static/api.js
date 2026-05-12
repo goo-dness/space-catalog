@@ -37,7 +37,7 @@ async function fetchAgencies() {
 
 async function fetchMessierObjects(page = 1, limit = 10) {
   const response = await fetch(
-    `${API_BASE}/messier/?page=${page}&limit=${limit}`,
+    `${API_BASE}/messier?page=${page}&limit=${limit}`,
   );
   return await response.json();
 }
