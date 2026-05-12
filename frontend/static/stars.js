@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       <div class="catalog-details">
       <div class="detail">
         <span class="detail-label">African Names</span>
-        <span class="detail-value">${Object.entries(star.african_names || {}).map([culture, name])}</span>
+        <span class="detail-value">${star.african_names || "Coming soon"}</span>
       </div>
         <div class="detail">
           <span class="detail-label">Distance</span>
