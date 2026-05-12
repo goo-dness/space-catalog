@@ -18,10 +18,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       <p class="catalog-description">${star.description || "Coming soon"}</p>
       <img src="${star.image_url}" alt="${star.name}" class="card-image"/>
       <div class="catalog-details">
-      <div class="detail">
-        <span class="detail-label">African Names</span>
-        <span class="detail-value">${star.african_names || "Coming soon"}</span>
-      </div>
         <div class="detail">
           <span class="detail-label">Distance</span>
           <span class="detail-value">${star.distance_light_years} ly</span>
