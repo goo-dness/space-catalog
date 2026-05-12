@@ -35,11 +35,14 @@ async function fetchAgencies() {
   return await response.json();
 }
 
-async function fetchMessierObjects(limit = 10, offset = 0) {
+async function fetchMessierObjects(page = 1, limit = 10) {
   const response = await fetch(
-    `${API_BASE}/messier/?limit=${limit}&offset=${offset}`,
+    `${API_BASE}/messier/?page=${page}&limit=${limit}`,
   );
   return await response.json();
+}
+async function fetchMessierCount() {
+  const response = await fetch(`${API_BASE}/messier/count`);
 }
 
 async function fetchNews() {

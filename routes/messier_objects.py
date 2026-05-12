@@ -18,6 +18,12 @@ def get_db():
         db.close()
 
 
+@router.get("/messier/count")
+def get_objects_count(db: Session = Depends(get_db)):
+    total = db.query(MessierObjects).count()
+    return {"total": total}
+
+
 @router.get("/messier", response_model=List[MessierObjectResponse])
 def get_messier_objects(
     db: Session = Depends(get_db),

@@ -1,77 +1,100 @@
-import { fetchMessierObjects } from "./api.js";
+import { fetchMessierObjects, fetchMessierCount } from "./api.js";
 
-// Global state for pagination
-let currentOffset = 0;
-const limit = 12; // 12 works well for 3 or 4-column grids
+let currentPage = 1;
+const limit = 12; // Adjusted to 12 for a better grid layout (3x4 or 4x3)
 
-async function loadCatalog(offset) {
+async function loadMessierCatalog() {
   const grid = document.getElementById("messier_objects-grid");
 
-  //Fetch the specific slice of data
-  const messier_objects = await fetchMessierObjects(limit, offset);
+  grid.innerHTML = "<p class='loading'>Loading the cosmos...</p>";
 
-  // Clear the grid for the new page
+  // Fetching both the data and the total count simultaneously
+  const [messier_objects, countData] = await Promise.all([
+    fetchMessierObjects(currentPage, limit),
+    fetchMessierCount(),
+  ]);
+
+  const total = countData.total;
+  const totalPages = Math.ceil(total / limit);
+
   grid.innerHTML = "";
+
   if (messier_objects.length === 0) {
-    grid.innerHTML = "<p>No objects found</p>";
+    grid.innerHTML = "<p class='loading'>No Messier objects found.</p>";
+    updatePagination(totalPages);
     return;
   }
 
-  messier_objects.forEach((messier_object) => {
+  messier_objects.forEach((obj) => {
     const card = document.createElement("div");
     card.className = "catalog-card";
     card.style.cursor = "pointer";
 
     card.addEventListener("click", () => {
-      window.location.href = `messier-detail.html?id=${messier_object.id}`;
+      window.location.href = `messier-detail.html?id=${obj.id}`;
     });
 
     card.innerHTML = `
-            <div class="catalog-card-header">
-                <h3>M${messier_object.messier_number}: ${messier_object.name}</h3>
-                <span class="catalog-badge">${messier_object.object_type}</span>
-            </div>
-            <p class="catalog-description">${messier_object.description}</p>
-            <img src="${messier_object.image_url}" alt="${messier_object.name}" class="card-image"/>
-            <div class="catalog-details">
-                <div class="detail">
-                    <span class="detail-label">NGC Number</span>
-                    <span class="detail-value">${messier_object.ngc_number}</span>
-                </div>
-                <div class="detail">
-                    <span class="detail-label">Constellation</span>
-                    <span class="detail-value">${messier_object.constellation}</span>
-                </div>
-                <div class="detail">
-                    <span class="detail-label">Apparent Magnitude</span>
-                    <span class="detail-value">${messier_object.apparent_magnitude}</span>
-                </div>
-            </div>
-        `;
+      <div class="catalog-card-header">
+        <h3>M${obj.messier_number}: ${obj.name}</h3>
+        <span class="catalog-badge">${obj.object_type}</span>
+      </div>
+      <p class="catalog-description">${obj.description}</p>
+      <img src="${obj.image_url}" alt="${obj.name}" class="card-image"/>
+      <div class="catalog-details">
+        <div class="detail">
+          <span class="detail-label">NGC Number</span>
+          <span class="detail-value">${obj.ngc_number}</span>
+        </div>
+        <div class="detail">
+          <span class="detail-label">Constellation</span>
+          <span class="detail-value">${obj.constellation}</span>
+        </div>
+        <div class="detail">
+          <span class="detail-label">Magnitude</span>
+          <span class="detail-value">${obj.apparent_magnitude}</span>
+        </div>
+      </div>
+    `;
     grid.appendChild(card);
   });
 
-  // Update button states
-  document.getElementById("prev-btn").disabled = offset === 0;
-  // If the backend returns fewer items than our limit, we are on the last page
-  document.getElementById("next-btn").disabled = messier_objects.length < limit;
+  updatePagination(totalPages);
+}
 
-  // Scroll back to top so the user sees the start of the new results
-  window.scrollTo({ top: 0, behavior: "smooth" });
+function updatePagination(totalPages) {
+  const prevBtn = document.getElementById("prev-btn");
+  const nextBtn = document.getElementById("next-btn");
+  const pageInfo = document.getElementById("page-info");
+
+  if (pageInfo) {
+    pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+  }
+
+  prevBtn.disabled = currentPage === 1;
+  nextBtn.disabled = currentPage === totalPages;
+
+  // Cleaning up listeners using the cloneNode trick from your planets code
+  prevBtn.replaceWith(prevBtn.cloneNode(true));
+  nextBtn.replaceWith(nextBtn.cloneNode(true));
+
+  document.getElementById("prev-btn").addEventListener("click", () => {
+    if (currentPage > 1) {
+      currentPage--;
+      loadMessierCatalog();
+      window.scrollTo(0, 0);
+    }
+  });
+
+  document.getElementById("next-btn").addEventListener("click", () => {
+    if (currentPage < totalPages) {
+      currentPage++;
+      loadMessierCatalog();
+      window.scrollTo(0, 0);
+    }
+  });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Initial load
-  loadCatalog(currentOffset);
-
-  // Set up event listeners for your buttons
-  document.getElementById("next-btn").addEventListener("click", () => {
-    currentOffset += limit;
-    loadCatalog(currentOffset);
-  });
-
-  document.getElementById("prev-btn").addEventListener("click", () => {
-    currentOffset = Math.max(0, currentOffset - limit);
-    loadCatalog(currentOffset);
-  });
+  loadMessierCatalog();
 });
