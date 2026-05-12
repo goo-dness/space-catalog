@@ -27,10 +27,11 @@ def get_objects_count(db: Session = Depends(get_db)):
 @router.get("/messier", response_model=List[MessierObjectResponse])
 def get_messier_objects(
     db: Session = Depends(get_db),
+    page: int = Query(default=1, ge=1),
     limit: int = Query(default=10, ge=1, le=100),
-    offset: int = Query(default=0, ge=0),
 ):
-    objects = db.query(MessierObjects).offset(offset).limit(limit).all()
+    skip = (page - 1) * limit
+    objects = db.query(MessierObjects).offset(skip).limit(limit).all()
     return objects
 
 

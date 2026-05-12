@@ -43,6 +43,7 @@ async function fetchMessierObjects(page = 1, limit = 10) {
 }
 async function fetchMessierCount() {
   const response = await fetch(`${API_BASE}/messier/count`);
+  return await response.json();
 }
 
 async function fetchNews() {
