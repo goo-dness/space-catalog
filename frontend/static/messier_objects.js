@@ -1,5 +1,3 @@
-import { fetchMessierObjects, fetchMessierCount } from "./api.js";
-
 let currentPage = 1;
 const limit = 12; // Adjusted to 12 for a better grid layout (3x4 or 4x3)
 
