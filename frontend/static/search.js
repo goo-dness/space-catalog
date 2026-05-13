@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    fetch(`/search?q=${encodeURIComponent(query)}`)
+    fetch(`/api/v1/search?q=${encodeURIComponent(query)}`)
       .then((response) => response.json())
       .then((data) => {
         resultsContainer.innerHTML = "";
