@@ -802,8 +802,8 @@ a {
 }
 #prev-btn,
 #next-btn {
-    background-color: var(--accent-gold--);
-    color: var(--text-primary--);
+    background-color: var(--accent-gold);
+    color: var(--text-primary);
     border: none;
     padding: 0.85rem 2rem;
     border-radius: 4px;
@@ -824,14 +824,14 @@ a {
 #prev-btn:disabled,
 #next-btn:disabled {
     background-color: var(--bordr-color);
-    color: var(--text-secondary--);
+    color: var(--text-secondary);
     cursor: not-allowed;
     transform: none;
     opacity: 0.5;
 }
 
 .page-info {
-    color: var(--text-secondary--);
+    color: var(--text-secondary);
     font-size: 0.9rem;
     min-width: 120px;
     text-align: center;

@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <p class="result-desc">${item.description || ""}</p>
               </a>
               `;
+              resultsContainer.appendChild(resultItem);
             });
           }
           //Show the container now that we have data
@@ -62,5 +63,4 @@ document.addEventListener("DOMContentLoaded", async () => {
         .catch((err) => console.error("Search system error:", err));
     }, 300); //Wait 300ms after the user stops typing
   });
-  resultsContainer.appendChild(resultItem);
 });
