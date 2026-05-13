@@ -82,7 +82,7 @@ a {
     margin: 20px auto;
 }
 #search-btn {
-    position: relative;
+    position: absolute;
     padding: 15px 25px;
     right: 5px;
     border: none;
@@ -107,7 +107,7 @@ a {
 }
 /* Styling the actual input box */
 #search-input {
-    width: 100%;
+    width: 80%;
     padding: 12px 20px;
     font-size: 16px;
     border: 2px solid #333;
