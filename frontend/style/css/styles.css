@@ -83,7 +83,7 @@ a {
 }
 #search-btn {
     position: absolute;
-    border-radius: 25px;
+    border-radius: none;
     padding: 15px 25px;
     right: 5px;
     border: none;
