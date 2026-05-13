@@ -40,7 +40,7 @@ a {
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: left;
+    align-items: center;
     padding: 1.2rem 4rem;
     background-color: var(--bg-secondary);
     border-bottom: 1px solid var(--border-color);
@@ -96,7 +96,7 @@ a {
 }
 
 #search-input:focus {
-    border-color: var(--accent-gold--); /* Highlights blue when you click it */
+    border-color: var(--accent-gold); /* Highlights blue when you click it */
 }
 
 /* The results dropdown - This is the "Floating" logic */
@@ -106,7 +106,7 @@ a {
     left: 0;
     right: 0;
     background-color: #222;
-    border: 1px solid var(--border-color--);
+    border: 1px solid var(--border-color);
     border-radius: 0 0 8px 8px;
     z-index: 1000; /* Makes it stay on top of other content */
     max-height: 400px;
@@ -117,7 +117,7 @@ a {
 /* Styling the "Manufactured" items we created in JS */
 .search-result-item {
     padding: 12px;
-    border-bottom: 1px solid var(--border-color--);
+    border-bottom: 1px solid var(--border-color);
     transition: background 0.2s;
 }
 
@@ -127,20 +127,20 @@ a {
 
 .search-result-item a {
     text-decoration: none;
-    color: var(--text-secondary--);
+    color: var(--text-secondary);
     display: block;
 }
 
 .result-name {
     font-weight: bold;
     display: block;
-    color: var(--text-primary--);
+    color: var(--text-primary);
 }
 
 .result-type {
     font-size: 12px;
     text-transform: uppercase;
-    color: var(--text-secondary--);
+    color: var(--text-secondary);
 }
 /* =======================
     HERO
@@ -805,7 +805,7 @@ a {
     background-color: var(--accent-gold--);
     color: var(--text-primary--);
     border: none;
-    padding: 0.85reem 2rem;
+    padding: 0.85rem 2rem;
     border-radius: 4px;
     font-size: 1rem;
     font-weight: 600;

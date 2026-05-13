@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  const searchInput = document.getElementById("search-input").value.trim();
+  const searchInput = document.getElementById("search-input");
   const resultsContainer = document.getElementById("search-results");
   //2. variable to hold our timer to prevent spamming the server
   let searchTimeout;
@@ -62,4 +62,5 @@ document.addEventListener("DOMContentLoaded", async () => {
         .catch((err) => console.error("Search system error:", err));
     }, 300); //Wait 300ms after the user stops typing
   });
+  resultsContainer.appendChild(resultItem);
 });
