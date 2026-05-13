@@ -83,8 +83,8 @@ a {
 }
 #search-button {
     position: absolute;
-    padding: 10px 22px;
-    right: 6px;
+    padding: 14px 22px;
+    right: 3px;
     border: none;
     background-color: var(--accent-gold);
     color: var(--bg-primary);
