@@ -53,3 +53,7 @@ async function fetchNews() {
   //Fetches 20 news from the api
   return await response.json();
 }
+async function fetchSearch() {
+  const response = await fetch(`${API_BASE}/search`);
+  return response.json();
+}
