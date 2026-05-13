@@ -81,11 +81,31 @@ a {
     max-width: 500px;
     margin: 20px auto;
 }
-.search-btn {
-    border-radius: 4px;
-    padding: 2rem 1.5rem;
+#search-btn {
+    position: absolute;
+    border-radius: 25px;
+    padding: 8px 20px;
+    right: 5px;
+    border: none;
+    background-color: var(--accent-gold);
+    color: var(--bg-primary);
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
 }
 
+#search-btn:hover {
+    background-color: white;
+    box-shadow: var(--glow-gold);
+    transform: scale(1.05);
+}
+
+#search-btn:active {
+    transform: scale(0.95);
+}
 /* Styling the actual input box */
 #search-input {
     width: 100%;
