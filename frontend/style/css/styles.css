@@ -81,6 +81,10 @@ a {
     max-width: 500px;
     margin: 20px auto;
 }
+.search-btn {
+    border-radius: 4px;
+    padding: 2rem 1.5rem;
+}
 
 /* Styling the actual input box */
 #search-input {
