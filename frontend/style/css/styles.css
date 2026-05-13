@@ -74,6 +74,74 @@ a {
 .nav-links a:hover {
     color: var(--accent-gold);
 }
+/* The wrapper needs to be relative so the results can be absolute */
+.search-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+/* Styling the actual input box */
+#search-input {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    color: white;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#search-input:focus {
+    border-color: var(--accent-gold--); /* Highlights blue when you click it */
+}
+
+/* The results dropdown - This is the "Floating" logic */
+#search-results {
+    position: absolute;
+    top: 100%; /* Sits exactly below the input */
+    left: 0;
+    right: 0;
+    background-color: #222;
+    border: 1px solid var(--border-color--);
+    border-radius: 0 0 8px 8px;
+    z-index: 1000; /* Makes it stay on top of other content */
+    max-height: 400px;
+    overflow-y: auto; /* Adds a scrollbar if there are many results */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Styling the "Manufactured" items we created in JS */
+.search-result-item {
+    padding: 12px;
+    border-bottom: 1px solid var(--border-color--);
+    transition: background 0.2s;
+}
+
+.search-result-item:hover {
+    background-color: #333;
+}
+
+.search-result-item a {
+    text-decoration: none;
+    color: var(--text-secondary--);
+    display: block;
+}
+
+.result-name {
+    font-weight: bold;
+    display: block;
+    color: var(--text-primary--);
+}
+
+.result-type {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--text-secondary--);
+}
 /* =======================
     HERO
    =======================*/
@@ -891,5 +959,28 @@ a {
         padding: 0.7rem 1.2rem;
         font-size: 0.9rem;
         min-width: 90px;
+    }
+    /* Base styles (Mobile First) */
+    .search-wrapper {
+        width: 95%; /* Give it some breathing room on small screens */
+        max-width: 500px;
+        margin: 10px auto;
+    }
+
+    #search-input {
+        font-size: 16px; /* CRITICAL: Browsers zoom in automatically if font is < 16px */
+        padding: 15px; /* Larger tap area for fingers */
+    }
+
+    /* The Results Dropdown on Mobile */
+    #search-results {
+        /* On small screens, we make it wider to use the space */
+        width: 100%;
+        max-height: 70vh; /* Don't let it cover more than 70% of the screen height */
+    }
+
+    /* The "Tap Targets" */
+    .search-result-item {
+        padding: 18px 12px; /* Extra vertical padding for easier tapping */
     }
 }
