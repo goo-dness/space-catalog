@@ -19,7 +19,7 @@ def get_db():
 
 
 @router.get("/search")
-def search_objects(db: Session = Depends(get_db), q: str = Query(...)):
+def search_objects(q: str = Query(...), db: Session = Depends(get_db)):
     planets = db.query(Planet).filter(Planet.name.ilike(f"%{q}%")).limit(5).all()
     stars = db.query(Star).filter(Star.name.ilike(f"%{q}%")).limit(5).all()
     messier_objects = (
