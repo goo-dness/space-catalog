@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    fetch(`/api/v1/search?q=${encodeURIComponent(query)}`)
+    fetch(`/search?q=${encodeURIComponent(query)}`)
       .then((response) => response.json())
       .then((data) => {
         resultsContainer.innerHTML = "";
@@ -46,8 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         }
         resultsContainer.style.display = "block";
-      })
-      .catch((err) => console.error("Search Error:", err));
+      });
   };
 
   // --- Trigger 1: Clicking the Button ---
