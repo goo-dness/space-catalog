@@ -1,10 +1,10 @@
-const search = document.getElementById("search-input").value.trim();
+const searchInput = document.getElementById("search-input").value.trim();
 const resultsContainer = document.getElementById("search-results");
 //2. variable to hold our timer to prevent spamming the server
 let searchTimeout;
 
 //3. listen for every keystroke
-search.addEventListener("input", (event) => {
+searchInput.addEventListener("input", (event) => {
   //clear the previous timer
   clearTimeout(searchTimeout);
 
