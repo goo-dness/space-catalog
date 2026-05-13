@@ -81,7 +81,7 @@ a {
     max-width: 500px;
     margin: 20px auto;
 }
-#search-btn {
+#search-button {
     position: absolute;
     padding: 15px 25px;
     right: 5px;
@@ -96,13 +96,13 @@ a {
     letter-spacing: 1px;
 }
 
-#search-btn:hover {
+#search-button:hover {
     background-color: white;
     box-shadow: var(--glow-gold);
     transform: scale(1.05);
 }
 
-#search-btn:active {
+#search-button:active {
     transform: scale(0.95);
 }
 /* Styling the actual input box */
