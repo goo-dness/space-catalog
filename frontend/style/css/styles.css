@@ -108,7 +108,7 @@ a {
 /* Styling the actual input box */
 #search-input {
     width: 100%;
-    padding: 14px 85px 14px 25px;
+    padding: 14px 25px;
     font-size: 16px;
     border: 2px solid #333;
     border-radius: 8px;
