@@ -89,8 +89,8 @@ a {
     font-size: 16px;
     border: 2px solid #333;
     border-radius: 8px;
-    background-color: #1a1a1a;
-    color: white;
+    background-color: white;
+    color: black;
     outline: none;
     transition: border-color 0.3s;
 }
