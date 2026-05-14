@@ -11,17 +11,9 @@ async function fetchStars() {
 async function fetchPlanets(page = 1, limit = 20, filters = {}) {
   //page = which page to fetch, default 1
   // limit = how many per page, default 20
-  // filters = object with optional is_exoplanet, search, discovery_method
+  // filters = object with optional is_exoplanet, discovery_method
 
-  const params = new URLSearchParams({
-    page,
-    limit,
-    ...filters,
-    //spreads any filter keys into query params
-    // e.g {is_exoplanet: true} becomes ?is_exoplanet=true
-  });
-
-  const response = await fetch(`${API_BASE}/planets?${params}`);
+  const response = await fetch(`${API_BASE}/planets`);
   return await response.json();
 }
 async function fetchPlanetsCount(filters = {}) {

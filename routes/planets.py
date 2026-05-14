@@ -22,19 +22,12 @@ def get_db():
 def get_planets_count(
     db: Session = Depends(get_db),
     is_exoplanet: Optional[bool] = Query(None),
-    search: Optional[str] = Query(None),
     discovery_method: Optional[str] = Query(None),
 ):
     # separate counts endpoints so frontend knows total pages
     query = db.query(Planet)
     if is_exoplanet is not None:
         query = query.filter(Planet.is_exoplanet == is_exoplanet)
-    if search:
-        query = query.filter(
-            Planet.name.ilike(f"%{search}%") | Planet.host_star.ilike(f"%{search}%")
-        )
-        # ilike does case insensitve search
-        # % means match anything before or after the term
     if discovery_method:
         query = query.filter(Planet.discovery_method == discovery_method)
 
