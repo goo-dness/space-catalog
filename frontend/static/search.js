@@ -4,8 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchButton = document.getElementById("search-button");
   const resultsContainer = document.getElementById("search-results");
 
-  
-
   // --- The Core Logic Function ---
   const performSearch = () => {
     const query = searchInput.value.trim();
@@ -71,6 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- Trigger 3: Live typing (Debounced) ---
   searchInput.addEventListener("input", () => {
     clearTimeout(searchTimeout);
-    searchTimeout = setTimeout(performSearch, 300);
+    searchTimeout = setTimeout(performSearch, 500);
   });
 });
