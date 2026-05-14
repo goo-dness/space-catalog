@@ -41,7 +41,7 @@ app.include_router(star_router, prefix="/api/v1", tags=["stars"])
 app.include_router(agency_router, prefix="/api/v1", tags=["agencies"])
 app.include_router(messier_router, prefix="/api/v1", tags=["messier"])
 app.include_router(apod_router, prefix="/api/v1")
-app.include_router(search_router, prefix="/api/v1")
+app.include_router(search_router, prefix="/api/v1", tags=["search"])
 
 
 @app.get("/")

@@ -70,7 +70,7 @@ def search_objects(q: str = Query(...), db: Session = Depends(get_db)):
             "name": m.name,
             "type": "messier_objects",
             "description": m.description,
-            "object_tpye": m.object_type,
+            "object_type": m.object_type,
         }
         for m in messier_objects
     ]

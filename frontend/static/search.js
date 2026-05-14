@@ -14,8 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    fetch(`/search?q=${encodeURIComponent(query)}`)
-      .then((response) => response.json())
+    fetch(`/api/v1/search?q=${encodeURIComponent(query)}`)
+      .then((response) => {
+        if (!response.ok) throw new Error(`${response.status}`);
+        response.json();
+      })
       .then((data) => {
         resultsContainer.innerHTML = "";
         if (data.length === 0) {
