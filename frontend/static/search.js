@@ -1,8 +1,10 @@
+let searchTimeout;
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("search-input");
   const searchButton = document.getElementById("search-button");
   const resultsContainer = document.getElementById("search-results");
-  let searchTimeout;
+
+  
 
   // --- The Core Logic Function ---
   const performSearch = () => {
