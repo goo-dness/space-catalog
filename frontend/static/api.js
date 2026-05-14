@@ -18,8 +18,7 @@ async function fetchPlanets(page = 1, limit = 20, filters = {}) {
 }
 async function fetchPlanetsCount(filters = {}) {
   //fetches total count for pagination calculation
-  const params = new URLSearchParams(filters);
-  const response = await fetch(`${API_BASE}/planets/count?${params}`);
+  const response = await fetch(`${API_BASE}/planets/count`);
   return await response.json();
 }
 async function fetchAgencies() {
