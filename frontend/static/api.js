@@ -16,7 +16,7 @@ async function fetchPlanets(page = 1, limit = 20, filters = {}) {
   const response = await fetch(`${API_BASE}/planets`);
   return await response.json();
 }
-async function fetchPlanetsCount(filters = {}) {
+async function fetchPlanetsCount() {
   //fetches total count for pagination calculation
   const response = await fetch(`${API_BASE}/planets/count`);
   return await response.json();
