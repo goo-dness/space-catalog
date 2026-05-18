@@ -3,7 +3,7 @@ import sys
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from core.database import SessionLocal
+from core.database import Base, SessionLocal, engine
 from data.agencies import agencies_data
 from data.astronauts import astronauts_data
 from data.messier_objects import messier_data
@@ -14,6 +14,10 @@ from models.astronauts import Astronaut
 from models.messier_objects import MessierObjects
 from models.planets import Planet
 from models.stars import Star
+
+Base.metadata.drop_all(bind=engine)
+
+Base.metadata.create_all(bind=engine)
 
 
 def seed_planets():
