@@ -1,4 +1,4 @@
-const API_BASE = "https://space-catalog-production.up.railway.app/api/v1";
+const API_BASE = "http://localhost:8000/api/v1";
 
 async function fetchAPOD() {
   const response = await fetch(`${API_BASE}/apod`);
@@ -34,6 +34,16 @@ async function fetchMessierObjects(page = 1, limit = 10) {
 }
 async function fetchMessierCount() {
   const response = await fetch(`${API_BASE}/messier/count`);
+  return await response.json();
+}
+async function fetchAstronauts(page = 1, limit = 10) {
+  const response = await fetch(
+    `${API_BASE}/astronauts?page=${page}&limit=${limit}`,
+  );
+  return await response.json();
+}
+async function fetchAstronautsCount() {
+  const response = await fetch(`${API_BASE}/astronauts/count`);
   return await response.json();
 }
 

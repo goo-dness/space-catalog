@@ -5,10 +5,12 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from core.database import SessionLocal
 from data.agencies import agencies_data
+from data.astronauts import astronauts_data
 from data.messier_objects import messier_data
 from data.planets import planets_data
 from data.stars import stars_data
 from models.agencies import Agency
+from models.astronauts import Astronaut
 from models.messier_objects import MessierObjects
 from models.planets import Planet
 from models.stars import Star
@@ -86,8 +88,29 @@ def seed_messier_objects():
         db.close()
 
 
+def seed_astronauts():
+    db = SessionLocal()
+    try:
+        for astronaut in astronauts_data:
+            exists = (
+                db.query(Astronaut).filter(Astronaut.name == astronaut["name"]).first()
+            )
+            if exists:
+                for key, value in astronaut.items():
+                    setattr(exists, key, value)
+            else:
+                db.add(Astronaut(**astronaut))
+        db.commit()
+        print("Astronault successfully seeded")
+    except Exception as e:
+        print(f"Error seeding astronault: {e}")
+    finally:
+        db.close()
+
+
 if __name__ == "__main__":
     seed_planets()
     seed_stars()
     seed_agencies()
     seed_messier_objects()
+    seed_astronauts()

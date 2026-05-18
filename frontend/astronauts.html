@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
-    <head>
+    <header>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Planet details|Space Catalog</title>
+        <title>Astronauts||Space Catalog</title>
         <link rel="stylesheet" href="style/css/styles.css" />
         <link rel="icon" type="image/png" href="logo.png" />
-    </head>
+    </header>
     <body>
         <nav class="navbar">
             <div class="nav-brand">
@@ -23,16 +23,30 @@
                 <li><a href="news.html">News</a></li>
             </ul>
         </nav>
-
-        <div class="detail-container" id="planet-detail">
-            <p>Loading planet...</p>
-        </div>
-
-        <footer class="footer">
-            <p>Space Catalog &mdash; part of the Sankofa Engine Platform</p>
-            <p>Built by Goodness Akuba &bull; Nigeria</p>
-        </footer>
-        <script src="static/api.js"></script>
-        <script src="static/planet-detail.js"></script>
     </body>
+
+    <section class="page-hero">
+        <h2>Astronauts</h2>
+        <p>The people making space exploration possible are documented here.</p>
+    </section>
+
+    <section class="catalog">
+        <div class="catalog-grid" id="astronauts-grid">
+            <p class="loading">Loading astronauts...</p>
+        </div>
+        <div class="planet-container"></div>
+        <div class="pagination">
+            <button id="prev-btn">Previous</button>
+            <span id="page-info"></span>
+            <button id="next-btn">Next</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Space Catalog &mdash; Part of the Sankofa Engine Platform</p>
+        <p>Built by Goodness Akuba &bull; Nigeria</p>
+    </footer>
+
+    <script src="static/api.js"></script>
+    <script src="static/astronauts.js"></script>
 </html>

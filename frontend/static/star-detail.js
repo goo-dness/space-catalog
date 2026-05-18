@@ -8,9 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
-  const response = await fetch(
-    `https://space-catalog-production.up.railway.app/api/v1/stars/${star_id}`,
-  );
+  const response = await fetch(`http://localhost:8000/api/v1/stars/${star_id}`);
   const star = await response.json();
 
   container.innerHTML = `
@@ -23,7 +21,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             <h2>${star.name}</h2>
             <span class="catalog-badge">${star.star_type || "Star"}</span>
           </div>
-          <p class="detail-description">${star.description}</p>
+          <p class="detail-description">${star.long_description}</p>
           <div class="detail">
             <p class="detail-label">Fun Facts</p>
             <p class="detail-value">${star.fun_facts}</p>

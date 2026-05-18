@@ -94,6 +94,7 @@ a {
     text-transform: uppercase;
     font-size: 0.8rem;
     letter-spacing: 1px;
+    display: flex;
 }
 
 #search-button:hover {

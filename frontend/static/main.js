@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const planets = await fetchPlanets();
   const agencies = await fetchAgencies();
   const messier = await fetchMessierObjects();
+  const astronaut = await fetchAstronauts();
 
   const apod = await fetchAPOD();
   const apodContainer = document.getElementById("apod-container");
@@ -82,6 +83,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     ...stars.map((s) => ({ ...s, type: "Star" })),
     ...planets.map((p) => ({ ...p, type: "Planet" })),
     ...messier.map((m) => ({ ...m, type: "Messier Object" })),
+    ...astronaut.map((a) => ({ ...a, type: "Astronaut" })),
   ];
   const today = new Date();
   const daySeed = today.getDate() + today.getMonth() + today.getFullYear();
@@ -98,7 +100,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         window.location.href = `star-detail.html?id=${obj.id}`;
       else if (obj.type === "Planet")
         window.location.href = `planet-detail.html?id=${obj.id}`;
-      else window.location.href = `messier-detail.html?id=${obj.id}`;
+      else if (obj.type === "Messier Object")
+        window.location.href = `messier-detail.html?id=${obj.id}`;
+      else window.location.href = `astronaut-detail.html?id=${obj.id}`;
     });
     card.innerHTML = `
       <h3>${obj.name}</h3>

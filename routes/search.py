@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 
 from core.database import SessionLocal
 from models.agencies import Agency
+from models.astronauts import Astronaut
 from models.messier_objects import MessierObjects
 from models.planets import Planet
 from models.stars import Star
@@ -29,6 +30,9 @@ def search_objects(q: str = Query(...), db: Session = Depends(get_db)):
         .all()
     )
     agencies = db.query(Agency).filter(Agency.name.ilike(f"%{q}%")).limit(5).all()
+    astronauts = (
+        db.query(Astronaut).filter(Astronaut.name.ilike(f"%{q}%")).limit(5).all()
+    )
 
     planets_result = [
         {
@@ -74,5 +78,16 @@ def search_objects(q: str = Query(...), db: Session = Depends(get_db)):
         }
         for m in messier_objects
     ]
-    results = planets_result + star_result + agency_result + messier_result
+
+    astronauts = [
+        {
+            "id": a.id,
+            "name": a.name,
+            "country": a.nationality,
+            "type": "astronaults",
+            "biography": a.short_biography,
+        }
+        for a in astronauts
+    ]
+    results = planets_result + star_result + agency_result + messier_result + astronauts
     return results

@@ -1,7 +1,7 @@
 from datetime import datetime, timezone
 
 from sqlalchemy import Column, DateTime, Float, Integer, String, Text
-from sqlalchemy.dialects.postgresql import JSONB
+from sqlalchemy.dialects.postgresql.json import JSON
 
 from core.database import Base
 
@@ -14,7 +14,8 @@ class Star(Base):
     name = Column(String, nullable=False, index=True)
     designation = Column(String)
     constellation = Column(String)
-    description = Column(String)
+    short_description = Column(String)
+    long_description = Column(Text)
     fun_facts = Column(String)
     distance_light_years = Column(Float)
     star_type = Column(String)
@@ -23,9 +24,9 @@ class Star(Base):
     image_url = Column(String)
 
     # african context - first class names
-    african_names = Column(JSONB)
+    african_names = Column(JSON)
     cultural_significance = Column(Text)
-    traditional_uses = Column(JSONB)
+    traditional_uses = Column(JSON)
     seasonal_associations = Column(Text)
     mythological_context = Column(Text)
 

@@ -10,7 +10,8 @@ class StarBase(BaseModel):
     designation: Optional[str] = None
     constellation: Optional[str] = None
     distance_light_years: Optional[float] = None
-    description: Optional[str] = None
+    short_description: Optional[str] = None
+    long_description: Optional[str] = None
     fun_facts: Optional[str] = None
     magnitude: Optional[float] = None
     star_type: Optional[str] = None
@@ -32,12 +33,13 @@ class StarCreate(StarBase):
 
 # Update schema — all fields optional for PATCH
 class StarUpdate(BaseModel):
-    name: Optional[str] = None
+    name: str
     designation: Optional[str] = None
     constellation: Optional[str] = None
     distance_light_years: Optional[float] = None
     magnitude: Optional[float] = None
-    description: Optional[str] = None
+    short_description: Optional[str] = None
+    long_description: Optional[str] = None
     fun_facts: Optional[str] = None
     star_type: Optional[str] = None
     african_names: Optional[dict] = None

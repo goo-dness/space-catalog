@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         <h3>${star.name}</h3>
         <span class="catalog-badge">${star.constellation}</span>
       </div>
-      <p class="catalog-description">${star.description || "Coming soon"}</p>
+      <p class="catalog-description">${star.short_description || "Coming soon"}</p>
       <img src="${star.image_url}" alt="${star.name}" class="card-image"/>
       <div class="catalog-details">
         <div class="detail">

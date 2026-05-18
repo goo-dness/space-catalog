@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    fetch(`/api/v1/search?q=${encodeURIComponent(query)}`)
+    fetch(`${API_BASE}/search?q=${encodeURIComponent(query)}`)
       .then((response) => {
         if (!response.ok) throw new Error(`${response.status}`);
         return response.json();
@@ -36,6 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
             else if (item.type === "agency") detailPage = "agency-detail.html";
             else if (item.type === "messier_objects")
               detailPage = "messier-detail.html";
+            else if (item.type === "astronauts")
+              detailPage = "astronaut-detail.html";
 
             resultItem.innerHTML = `
                             <a href="${detailPage}?id=${item.id}">

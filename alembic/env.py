@@ -10,6 +10,7 @@ from sqlalchemy import engine_from_config, pool
 from alembic import context
 from core.database import Base
 from models.agencies import Agency
+from models.astronauts import Astronaut
 from models.messier_objects import MessierObjects
 from models.planets import Planet
 from models.stars import Star
