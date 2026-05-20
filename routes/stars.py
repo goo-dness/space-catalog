@@ -1,9 +1,11 @@
-from fastapi import APIRouter, Depends, HTTPException
+from typing import List
+
+from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
+
 from core.database import SessionLocal
 from models.stars import Star
 from schemas.stars import StarCreate, StarResponse, StarUpdate
-from typing import List
 
 router = APIRouter()
 
@@ -16,9 +18,21 @@ def get_db():
         db.close()
 
 
+@router.get("/stars/count")
+def get_stars_count(db: Session = Depends(get_db)):
+    total = db.query(Star).count()
+    return {"total": total}
+
+
 @router.get("/stars", response_model=List[StarResponse])
-def get_stars(db: Session = Depends(get_db)):
-    return db.query(Star).all()
+def get_stars(
+    db: Session = Depends(get_db),
+    page: int = Query(default=1, ge=1),
+    limit: int = Query(default=20, ge=1, le=100),
+):
+    skip = (page - 1) * limit
+    stars = db.query(Star).offset(skip).limit(limit).all()
+    return stars
 
 
 @router.get("/stars/{star_id}", response_model=StarResponse)

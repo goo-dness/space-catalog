@@ -35,7 +35,11 @@ async function loadPlanets() {
       window.location.href = `planet-detail.html?id=${planet.id}`;
     });
 
-    const isExoplanet = planet.is_exoplanet;
+    // LINE-BY-LINE FIX: Ensure strings like "False" or "false" evaluate correctly to false booleans
+    const isExoplanet =
+      planet.is_exoplanet === true ||
+      planet.is_exoplanet === "true" ||
+      planet.is_exoplanet === "True";
 
     const detailsHTML = isExoplanet
       ? `

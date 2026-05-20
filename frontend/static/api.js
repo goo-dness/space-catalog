@@ -4,8 +4,12 @@ async function fetchAPOD() {
   const response = await fetch(`${API_BASE}/apod`);
   return await response.json();
 }
-async function fetchStars() {
-  const response = await fetch(`${API_BASE}/stars`);
+async function fetchStars(page = 1, limit = 20) {
+  const response = await fetch(`${API_BASE}/stars?page=${page}&limit=${limit}`);
+  return await response.json();
+}
+async function fetchStarsCount() {
+  const response = await fetch(`${API_BASE}/stars/count`);
   return await response.json();
 }
 async function fetchPlanets(page = 1, limit = 20, filters = {}) {

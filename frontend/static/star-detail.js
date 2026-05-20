@@ -29,7 +29,16 @@ document.addEventListener("DOMContentLoaded", async () => {
           <div class="catalog-details">
             <div class="detail">
               <span class="detail-label">African Names</span>
-              <span class="detail-value">${star.african_names}</span>
+              <span class="detail-value">${
+                star.african_names
+                  ? Object.entries(star.african_names)
+                      .map(
+                        ([culture, name]) =>
+                          `<span class="african-names"><span class="culture">${culture}:</span> ${name}</span`,
+                      )
+                      .join("")
+                  : "Research Ongoing"
+              }</span>
             </div>
             <div class="detail">
               <span class="detail-label">Distance</span>
@@ -61,7 +70,17 @@ document.addEventListener("DOMContentLoaded", async () => {
         </div>
         <div class="african-context">
           <h4>Traditional Uses</h4>
-          <p>${star.traditional_uses || "Research Ongoing"}</p>
+          <p>${
+            star.traditional_uses
+              ? Object.entries(star.traditional_uses)
+                  .filter(([category, value]) => value !== null)
+                  .map(
+                    ([category, value]) =>
+                      `<span class="use-entry"><span class="use-category">${category}:</span> ${value}</span>`,
+                  )
+                  .join("")
+              : "Research Ongoing"
+          }</p>
         </div>
       </div>
     </div>

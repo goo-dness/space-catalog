@@ -34,8 +34,8 @@ a {
     color: inherit;
 }
 /* ==========================
-   NAVBAR
-   ========================== */
+    NAVBAR
+    ========================== */
 
 .navbar {
     display: flex;
@@ -168,7 +168,7 @@ a {
 }
 /* =======================
     HERO
-   =======================*/
+    ======================*/
 
 .hero {
     min-height: 90vh;
@@ -317,8 +317,8 @@ a {
 }
 
 /* =================
-  FEATURED
-  ================== */
+    FEATURED
+    ================== */
 
 .featured {
     padding: 5rem 4rem;
@@ -413,8 +413,8 @@ a {
 }
 
 /* ===========================
-        SCROLLBAR
-        ========================== */
+    SCROLLBAR
+ ========================== */
 ::-webkit-scrollbar {
     width: 6px;
 }
@@ -433,8 +433,8 @@ a {
 }
 
 /* ===========================
-   APOD SECTION
-   ========================== */
+    APOD SECTION
+    ========================== */
 .apod {
     padding: 5rem 4rem;
     background-color: var(--bg-secondary);
@@ -536,8 +536,8 @@ a {
     grid-column: 1 / -1;
 }
 /* ===========================
-   PAGE HERO
-   =========================== */
+    PAGE HERO
+    =========================== */
 
 .page-hero {
     padding: 4rem;
@@ -564,8 +564,8 @@ a {
 }
 
 /* ===========================
-   CATALOG GRID
-   =========================== */
+    CATALOG GRID
+    =========================== */
 
 .catalog {
     padding: 4rem;
@@ -859,6 +859,32 @@ a {
     font-size: 0.9rem;
     min-width: 120px;
     text-align: center;
+}
+
+.african-names {
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.culture {
+    color: #f5c518;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-right: 0.4rem;
+}
+
+/*Traditional uses*/
+.use-entry {
+    display: block;
+    margin-bottom: 0.6rem;
+    line-height: 0.4rem;
+}
+
+.use-category {
+    color: #6c63ff;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-right: 0.4rem;
 }
 /* ===================
     MOBILE RESPONSIVE FIXES
