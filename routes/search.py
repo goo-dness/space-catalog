@@ -51,7 +51,7 @@ def search_objects(q: str = Query(...), db: Session = Depends(get_db)):
             "id": s.id,
             "name": s.name,
             "type": "star",
-            "description": s.description,
+            "description": s.short_description,
             "constellation": s.constellation,
         }
         for s in stars

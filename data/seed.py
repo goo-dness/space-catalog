@@ -15,8 +15,6 @@ from models.messier_objects import MessierObjects
 from models.planets import Planet
 from models.stars import Star
 
-Base.metadata.drop_all(bind=engine)
-
 Base.metadata.create_all(bind=engine)
 
 

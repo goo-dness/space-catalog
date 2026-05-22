@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                   ? Object.entries(star.african_names)
                       .map(
                         ([culture, name]) =>
-                          `<span class="african-names"><span class="culture">${culture}:</span> ${name}</span`,
+                          `<span class="african-names"><span class="culture">${culture}:</span> ${name}</span>`,
                       )
                       .join("")
                   : "Research Ongoing"
