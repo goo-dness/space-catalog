@@ -67,17 +67,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   }
 
-  const counters = {
-    "star-count": stars.length,
-    "planet-count": planets.length,
-    "agency-count": agencies.length,
-    "messier-count": messier.length,
-  };
-
-  Object.entries(counters).forEach(([id, value]) => {
-    document.getElementById(id).textContent = value;
-  });
-
   const featuredCards = document.getElementById("featured-cards");
   const allObjects = [
     ...stars.map((s) => ({ ...s, type: "Star" })),
