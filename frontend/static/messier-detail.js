@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               <span class="detail-value">${messier.apparent_magnitude}</span>
             </div>
             <div class="detail">
-              <span class="detail-label">Dclination</span>
+              <span class="detail-label">Declination</span>
               <span class="detail-value">${messier.declination}</span>
             </div>
             <div class="detail">
