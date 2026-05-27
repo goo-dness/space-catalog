@@ -32,7 +32,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["space-catalog-production-6.up.railway.app"],
+    allow_origins=["space-catalog.com.ng"],
     allow_methods=["*"],
     allow_headers=["*"],
 )

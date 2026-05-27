@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   const response = await fetch(
-    `https://space-catalog-production.up.railway.app/api/v1/agencies/${agency_id}`,
+    `https://space-catalog.com.ng/api/v1/agencies/${agency_id}`,
   );
   const agency = await response.json();
   container.innerHTML = `
