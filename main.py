@@ -32,7 +32,13 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["space-catalog.com.ng"],
+    allow_origins=[
+        "https://space-catalog.com.ng",
+        "https://space-catalog-production.up.railway.app",
+        "http://localhost:5500",
+        "http://127.0.0.1:5500",
+    ],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -45,11 +51,6 @@ app.include_router(messier_router, prefix="/api/v1", tags=["messier"])
 app.include_router(apod_router, prefix="/api/v1")
 app.include_router(search_router, prefix="/api/v1", tags=["search"])
 app.include_router(astronauts_router, prefix="/api/v1", tags=["astronauts"])
-
-
-@app.get("/")
-def root():
-    return {"message": "Welcome to Space Catalog"}
 
 
 app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
