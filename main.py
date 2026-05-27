@@ -34,7 +34,6 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "https://space-catalog.com.ng",
-        "https://space-catalog-production.up.app",
         "http://localhost:5500",
         "http://127.0.0.1:5500",
     ],
