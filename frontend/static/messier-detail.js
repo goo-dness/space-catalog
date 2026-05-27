@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   const response = await fetch(
-    `http://localhost:8000/api/v1/messier/${messier_id}`,
+    `https://space-catalog-production.up.railway.app/api/v1/messier/${messier_id}`,
   );
   const messier = await response.json();
 
