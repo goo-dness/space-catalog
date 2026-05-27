@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from core.database import Base, engine
 from routes.agencies import router as agency_router
@@ -49,3 +50,6 @@ app.include_router(astronauts_router, prefix="/api/v1", tags=["astronauts"])
 @app.get("/")
 def root():
     return {"message": "Welcome to Space Catalog"}
+
+
+app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
