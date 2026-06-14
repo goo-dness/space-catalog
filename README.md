@@ -37,7 +37,7 @@ Run the server:
 uvicorn main:app --reload
 
 ## Status
-In active development. Foundation layer complete.
+Deployed. Live at https://space-catalog.com.ng 
 
 ## Author
 Goodness — AI Systems Programmer
